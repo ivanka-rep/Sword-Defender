@@ -1,31 +1,23 @@
-using System;
 using Features.GameTagExtension;
-using SwordDefender.CharacterControl.Interfaces;
+using SwordDefender.Animations;
 using UnityEngine;
 
 namespace SwordDefender.CharacterControl
 {
-    public class EnemyController : MonoBehaviour, IMovementController
+    public class EnemyController : MonoBehaviour
     {
-        #region Public
-        public bool CanMove { get => m_canMove; set => m_canMove = value; }
-        public float Speed { get => m_speed; set => m_speed = value; }
-        public float RotationSpeed { get; set; } = 0;
+        #region Serizlized Fields
+        [SerializeField] private new Rigidbody rigidbody = null;
+        [SerializeField] private AnimationsManager animationsManager = null;
         #endregion
 
         #region Private
         private bool m_canMove = false;
-        private float m_speed = 0;
         private float m_speedMultiply = 20; //Задавать значение из конфига.
-        private Rigidbody m_rigidbody = new Rigidbody();
         private Transform m_target = null;
         #endregion
         
         #region Unity Methods
-        private void Awake()
-        {
-            m_rigidbody = gameObject.GetComponent<Rigidbody>();
-        }
 
         private void Update()
         {
@@ -41,8 +33,8 @@ namespace SwordDefender.CharacterControl
             if (!gameTagRef.ExistsTagName("Player")) return;
             
             m_canMove = false;
-            m_rigidbody.velocity = Vector3.zero;
-            gameObject.GetComponent<Animator>().enabled = false; // temporarly
+            rigidbody.velocity = Vector3.zero;
+            animationsManager.SetSpeed(0);
             //Attack   
         }
 
@@ -61,10 +53,9 @@ namespace SwordDefender.CharacterControl
         private void Move()
         {
             var speed = m_canMove ? 1f : 0;
-            var t = m_rigidbody.transform;
-            m_rigidbody.velocity = t.forward * (speed * m_speedMultiply);
-
-            m_speed = speed;
+            var t = rigidbody.transform;
+            rigidbody.velocity = t.forward * (speed * m_speedMultiply);
+            animationsManager.SetSpeed(speed);
         }
 
         private void Rotate()

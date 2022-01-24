@@ -1,33 +1,22 @@
-using SwordDefender.CharacterControl.Interfaces;
+using SwordDefender.Animations;
 using UnityEngine;
 
 namespace SwordDefender.CharacterControl
 {
-    public class PlayerController : MonoBehaviour, IMovementController
+    public class PlayerController : MonoBehaviour
     {
         #region Serialized Fields
         [SerializeField] private bool canMove = true;
-        #endregion
-
-        #region Implementation
-        public float Speed { get => m_speed; set => m_speed = value; }
-        public float RotationSpeed { get => m_rotationSpeed; set => m_rotationSpeed = value; }
+        [SerializeField] private new Rigidbody rigidbody = null;
+        [SerializeField] private AnimationsManager animationsManager = null;
         #endregion
 
         #region Private
         private float m_speedMultiply = 20; //Задавать значение из конфига.
         private float m_sensitivity = 0.3f; //Задавать как параметр.
-        private Rigidbody m_rigidbody = new Rigidbody();
-        private float m_speed = 0;
-        private float m_rotationSpeed = 0;
         #endregion
 
         #region Unity Methods
-        private void Awake()
-        {
-            m_rigidbody = gameObject.GetComponent<Rigidbody>();
-        }
-
         private void Update()
         {
             Move();
@@ -42,36 +31,38 @@ namespace SwordDefender.CharacterControl
             
             var horizontal = Input.GetAxis("Horizontal");
             var vertical = Input.GetAxis("Vertical");
-            var t = m_rigidbody.transform;
-            m_rigidbody.velocity = (t.forward * vertical + t.right * horizontal) * m_speedMultiply;
+            var t = rigidbody.transform;
+            rigidbody.velocity = (t.forward * vertical + t.right * horizontal) * m_speedMultiply;
             
-            m_speed = horizontal > 0 ? horizontal : vertical;
+            animationsManager.SetSpeed(vertical);
         }
 
         private void Rotate()
         {
-            var yRotation = m_rigidbody.rotation.eulerAngles.y;
-
+            var yRotation = rigidbody.rotation.eulerAngles.y;
+            var rotationSpeed = 0f;
+            
             if (Input.touchCount > 0)
             {
                 var touch = Input.GetTouch(0);
 
                 if (touch.phase == TouchPhase.Moved)
                 {
-                    m_rigidbody.rotation = Quaternion.Euler(0f,yRotation + touch.deltaPosition.x * m_sensitivity, 0f);
-                    m_rotationSpeed = 1;
+                    rigidbody.rotation = Quaternion.Euler(0f,yRotation + touch.deltaPosition.x * m_sensitivity, 0f);
+                    rotationSpeed = touch.deltaPosition.x > 0 ? 1 : -1;
                 }
             }
-            else m_rotationSpeed = 0;
 
 #if UNITY_EDITOR
             var mouseX = Input.GetAxis("Mouse X");
             if (mouseX != 0) 
             {
-                m_rigidbody.rotation = Quaternion.Euler(0f,yRotation + mouseX , 0f);
+                rigidbody.rotation = Quaternion.Euler(0f,yRotation + mouseX , 0f);
+                rotationSpeed = mouseX;
             }
-            m_rotationSpeed = mouseX;
 #endif
+            
+            animationsManager.SetRotationSpeed(rotationSpeed);
         }
         #endregion
     }
