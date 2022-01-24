@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using SwordDefender.CharacterControl.Interfaces;
 using UnityEngine;
 
@@ -41,6 +38,8 @@ namespace SwordDefender.CharacterControl
         #region Private Methods
         private void Move()
         {
+            if (!canMove) return;
+            
             var horizontal = Input.GetAxis("Horizontal");
             var vertical = Input.GetAxis("Vertical");
             var t = m_rigidbody.transform;

@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using Features.GameTagExtension;
 using SwordDefender.CharacterControl.Interfaces;
 using UnityEngine;
 
@@ -34,6 +34,18 @@ namespace SwordDefender.CharacterControl
             Move();
             Rotate();
         }
+
+        private void OnTriggerEnter(Collider col)
+        {
+            if (!col.gameObject.TryGetComponent<GameTagReference>(out var gameTagRef)) return;
+            if (!gameTagRef.ExistsTagName("Player")) return;
+            
+            m_canMove = false;
+            m_rigidbody.velocity = Vector3.zero;
+            gameObject.GetComponent<Animator>().enabled = false; // temporarly
+            //Attack   
+        }
+
         #endregion
 
         #region Public Methods
