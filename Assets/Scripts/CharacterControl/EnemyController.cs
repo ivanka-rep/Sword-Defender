@@ -1,18 +1,22 @@
+using System.Collections;
 using Features.GameTagExtension;
 using SwordDefender.Animations;
+using SwordDefender.CharacterControl.Interfaces;
 using UnityEngine;
 
 namespace SwordDefender.CharacterControl
 {
-    public class EnemyController : MonoBehaviour
+    public class EnemyController : MonoBehaviour, IMovementController
     {
         #region Serizlized Fields
         [SerializeField] private new Rigidbody rigidbody = null;
         [SerializeField] private AnimationsManager animationsManager = null;
+        [SerializeField] private CombatManager combatManager = null;
         #endregion
 
         #region Private
         private bool m_canMove = false;
+        private bool m_canAttack = true;
         private float m_speedMultiply = 20; //Задавать значение из конфига.
         private Transform m_target = null;
         #endregion
@@ -35,7 +39,7 @@ namespace SwordDefender.CharacterControl
             m_canMove = false;
             rigidbody.velocity = Vector3.zero;
             animationsManager.SetSpeed(0);
-            //Attack   
+            StartCoroutine(AttackRoutine());
         }
 
         #endregion
@@ -46,6 +50,12 @@ namespace SwordDefender.CharacterControl
             m_target = target;
             m_canMove = true;
             Rotate();
+        }
+        
+        public void StopAllActions()
+        {
+            //Debug.Log("StopAllActions");
+            m_canAttack = false;
         }
         #endregion
         
@@ -66,6 +76,18 @@ namespace SwordDefender.CharacterControl
                 return;
             }
             transform.LookAt(m_target);
+        }
+        #endregion
+
+        #region Coroutines
+
+        private IEnumerator AttackRoutine()
+        {
+            if (!m_canAttack) yield break;
+            
+            combatManager.Attack();
+            yield return new WaitForSeconds(1f);
+            yield return AttackRoutine();
         }
         #endregion
     }

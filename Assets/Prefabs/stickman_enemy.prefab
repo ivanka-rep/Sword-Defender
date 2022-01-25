@@ -828,7 +828,9 @@ GameObject:
   - component: {fileID: 459947244307643524}
   - component: {fileID: 459947244307643527}
   - component: {fileID: 459947244307643526}
+  - component: {fileID: 6016383314313271406}
   - component: {fileID: 459947244307643530}
+  - component: {fileID: -3576484209477864622}
   - component: {fileID: 459947244307643521}
   m_Layer: 0
   m_Name: stickman_enemy
@@ -901,6 +903,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3, y: 1.7, z: 1}
   m_Center: {x: 0, y: 0.85, z: 0}
+--- !u!114 &6016383314313271406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459947244307643520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a081210aa1707429fa47bc6eee885e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_gameTags:
+  - {fileID: 11400000, guid: ec911b46a3dfa354cbf93e0e6d6c700e, type: 2}
 --- !u!114 &459947244307643530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -914,6 +930,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 459947244307643524}
+--- !u!114 &-3576484209477864622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459947244307643520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8df26b138e9046c4b9afde13c6a70ee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationsManager: {fileID: 459947244307643530}
+  enemyTag: {fileID: 11400000, guid: 74e4b54f13aebec4daceedcb4a2419e9, type: 2}
+  damage: 10
 --- !u!114 &459947244307643521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -928,6 +959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 459947244307643527}
   animationsManager: {fileID: 459947244307643530}
+  combatManager: {fileID: -3576484209477864622}
 --- !u!1 &459947244373758033
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,6 +971,7 @@ GameObject:
   - component: {fileID: 459947244373758038}
   - component: {fileID: 459947244373758036}
   - component: {fileID: 459947244373758039}
+  - component: {fileID: 1565401437544911225}
   m_Layer: 0
   m_Name: Simple Sword
   m_TagString: Untagged
@@ -1009,6 +1042,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1565401437544911225
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459947244373758033}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03805948, y: 0.22548845, z: 0.019746488}
+  m_Center: {x: -0.00019948531, y: 0.08372908, z: -9.229948e-10}
 --- !u!1 &459947244445349053
 GameObject:
   m_ObjectHideFlags: 0

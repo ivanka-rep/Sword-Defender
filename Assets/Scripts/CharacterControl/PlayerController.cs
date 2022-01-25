@@ -1,30 +1,50 @@
 using SwordDefender.Animations;
+using SwordDefender.CharacterControl.Interfaces;
 using UnityEngine;
 
 namespace SwordDefender.CharacterControl
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour, IMovementController
     {
         #region Serialized Fields
         [SerializeField] private bool canMove = true;
         [SerializeField] private new Rigidbody rigidbody = null;
         [SerializeField] private AnimationsManager animationsManager = null;
+        [SerializeField] private CombatManager combatManager = null;
         #endregion
 
         #region Private
         private float m_speedMultiply = 20; //Задавать значение из конфига.
         private float m_sensitivity = 0.3f; //Задавать как параметр.
+        private bool m_canControl = true;
         #endregion
 
         #region Unity Methods
         private void Update()
         {
+            if (!m_canControl) return;
+            
+            Attack();
             Move();
             Rotate();
         }
         #endregion
 
+        #region Public Methods
+        public void StopAllActions()
+        {
+            //Debug.Log("StopAllActions");
+            m_canControl = false;
+        }
+        #endregion
+        
         #region Private Methods
+
+        private void Attack()
+        {
+            if (Input.GetAxis("Fire1") > 0) combatManager.Attack();
+        }
+
         private void Move()
         {
             if (!canMove) return;

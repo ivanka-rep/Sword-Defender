@@ -399,6 +399,7 @@ GameObject:
   - component: {fileID: 4857272330326630207}
   - component: {fileID: 4857272330326630200}
   - component: {fileID: 4857272330326630206}
+  - component: {fileID: 2921111148926154075}
   - component: {fileID: 4857272330326630202}
   m_Layer: 0
   m_Name: stickman_sword
@@ -471,7 +472,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 2.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4857272330326630200
 MonoBehaviour:
@@ -500,6 +501,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4857272330326630203}
+--- !u!114 &2921111148926154075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4857272330326630180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8df26b138e9046c4b9afde13c6a70ee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationsManager: {fileID: 4857272330326630206}
+  enemyTag: {fileID: 11400000, guid: ec911b46a3dfa354cbf93e0e6d6c700e, type: 2}
 --- !u!114 &4857272330326630202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,6 +530,7 @@ MonoBehaviour:
   canMove: 1
   rigidbody: {fileID: 4857272330326630201}
   animationsManager: {fileID: 4857272330326630206}
+  combatManager: {fileID: 2921111148926154075}
 --- !u!1 &4857272331191100667
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,6 +542,7 @@ GameObject:
   - component: {fileID: 5198191770974486081}
   - component: {fileID: 9190848803304239588}
   - component: {fileID: 6370485723758658862}
+  - component: {fileID: 5824612285635750648}
   m_Layer: 0
   m_Name: Simple Sword
   m_TagString: Untagged
@@ -596,6 +613,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5824612285635750648
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4857272331191100667}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.13449484, y: 0.32726312, z: 0.019746488}
+  m_Center: {x: 0.05177055, y: 0.16290556, z: 0.000000032881132}
 --- !u!1 &5435417267440090472
 GameObject:
   m_ObjectHideFlags: 0
