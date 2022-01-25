@@ -47,9 +47,15 @@ namespace SwordDefender.CharacterControl
         #region Public Methods
         public void StartMoving(Transform target)
         {
+            if (target == null)
+            {
+                Debug.LogError("Target is null");
+                return;
+            }
+            
             m_target = target;
-            m_canMove = true;
             Rotate();
+            m_canMove = true;
         }
         
         public void StopAllActions()
@@ -68,15 +74,9 @@ namespace SwordDefender.CharacterControl
             animationsManager.SetSpeed(speed);
         }
 
-        private void Rotate()
-        {
-            if (m_target == null)
-            {
-                Debug.Log("Target is null");
-                return;
-            }
+        private void Rotate() =>
             transform.LookAt(m_target);
-        }
+        
         #endregion
 
         #region Coroutines

@@ -7,12 +7,20 @@ namespace SwordDefender.Game
 {
     public class GameManager : MonoBehaviour
     {
-        [SerializeField] private Transform playerT;
-        [SerializeField] private List<EnemyController> enemyList;
+        #region Singleton
+        public static GameManager Instance = null;
+        #endregion
+        
+        [SerializeField] private EnemySpawner enemySpawner;
         private void Awake()
+        { 
+            if (Instance != null) Destroy(Instance); 
+            Instance = this;
+        }
+
+        private void Start()
         {
-        //Todo: отдельный контроллер противников
-        enemyList.ForEach(enemy => { enemy.StartMoving(playerT); });
+            enemySpawner.StartAction(10);
         }
     }
 }
