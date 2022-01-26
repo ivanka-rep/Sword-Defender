@@ -16,7 +16,7 @@ namespace SwordDefender.CharacterControl
 
         #region Private
         private float m_speedMultiply = 20; //Задавать значение из конфига.
-        private float m_sensitivity = 0.3f; //Задавать как параметр.
+        private float m_sensitivity = 0.5f; //Задавать как параметр.
         private bool m_canControl = true;
         #endregion
 

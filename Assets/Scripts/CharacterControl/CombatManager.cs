@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Features.GameTagExtension;
 using SwordDefender.Animations;

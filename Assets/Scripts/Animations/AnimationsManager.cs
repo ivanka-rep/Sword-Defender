@@ -17,6 +17,11 @@ namespace SwordDefender.Animations
         private static readonly int Dead = Animator.StringToHash("Dead");
         #endregion
 
+        #region Private
+        private float m_rotationSpeed = 0f;
+        private bool m_isTurning = false;
+        #endregion
+        
         #region Public Methods
         
         public void SetSpeed(float speed) =>
@@ -24,8 +29,13 @@ namespace SwordDefender.Animations
 
         public void SetRotationSpeed(float speed)
         {
+            m_rotationSpeed = speed;
             animator.SetFloat(RotationSpeed, speed);
-            animator.SetBool(IsTurning, speed != 0);
+            animator.SetBool(IsTurning, true);
+            
+            if (speed == 0)
+                StartCoroutine(CheckForTurningRoutine());
+            
         }
 
         public void SetAttackTrigger(bool flag)
@@ -54,6 +64,26 @@ namespace SwordDefender.Animations
         {
             yield return new WaitForSeconds(0.5f);
             SetAttackTrigger(false);
+        }
+
+        private IEnumerator CheckForTurningRoutine()
+        {
+            var elapsedTime = 0f;
+            var waitTime = 0.25f;
+            var rotationSpeed = 0f;
+
+            while (elapsedTime < waitTime)
+            {
+                rotationSpeed += m_rotationSpeed;
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            if (rotationSpeed < 0.1f && rotationSpeed > -0.1)
+            {
+                animator.SetBool(IsTurning, false);
+            }
+            
         }
         #endregion
     }
