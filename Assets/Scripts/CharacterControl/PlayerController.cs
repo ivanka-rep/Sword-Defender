@@ -36,7 +36,7 @@ namespace SwordDefender.CharacterControl
         {
             //Debug.Log("StopAllActions");
             m_canControl = false;
-            //if(isDead) GameManager.Instance.StopEnemiesAction();
+            if(isDead) GameManager.Instance.StopEnemiesAction();
         }
         #endregion
         

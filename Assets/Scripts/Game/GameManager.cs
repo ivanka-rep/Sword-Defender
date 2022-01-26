@@ -19,10 +19,10 @@ namespace SwordDefender.Game
         {
             enemySpawner.StartAction(10);
         }
-        //
-        // public void StopEnemiesAction()
-        // {
-        //     enemySpawner.StopAction();
-        // }
+        
+        public void StopEnemiesAction()
+        {
+            enemySpawner.StopAction();
+        }
     }
 }
