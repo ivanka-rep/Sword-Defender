@@ -75,7 +75,7 @@ namespace SwordDefender.CharacterControl
         private void StartDeathAnim()
         {
             animationsManager.StartDeathTrigger(true);
-            m_movementController.StopAllActions();
+            m_movementController.StopAllActions(true);
             m_isAttack = false;
         }
 

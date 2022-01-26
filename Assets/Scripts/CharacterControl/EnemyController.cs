@@ -12,6 +12,7 @@ namespace SwordDefender.CharacterControl
         [SerializeField] private new Rigidbody rigidbody = null;
         [SerializeField] private AnimationsManager animationsManager = null;
         [SerializeField] private CombatManager combatManager = null;
+        [SerializeField] private SkinnedMeshRenderer meshRenderer = null;
         #endregion
 
         #region Private
@@ -56,12 +57,13 @@ namespace SwordDefender.CharacterControl
             m_target = target;
             Rotate();
             m_canMove = true;
+            m_canAttack = true;
         }
         
-        public void StopAllActions()
+        public void StopAllActions(bool isDead = false)
         {
-            //Debug.Log("StopAllActions");
             m_canAttack = false;
+            if (isDead) StartCoroutine(DeathRoutine());
         }
         #endregion
         
@@ -84,10 +86,30 @@ namespace SwordDefender.CharacterControl
         private IEnumerator AttackRoutine()
         {
             if (!m_canAttack) yield break;
+            var wfs = new WaitForSeconds(1f);
             
             combatManager.Attack();
-            yield return new WaitForSeconds(1f);
+            yield return wfs;
             yield return AttackRoutine();
+        }
+
+        private IEnumerator DeathRoutine()
+        {
+            // var oldColor = meshRenderer.sharedMaterial.color;
+            // var newColor = new Color(oldColor.r, oldColor.g, oldColor.b, 0f);
+            //
+            // var elapsedTime = 0f;
+            // var waitTime = 2f;
+            //
+            // while (elapsedTime < waitTime)
+            // {
+            //     meshRenderer.sharedMaterial.color = Color.Lerp(oldColor, newColor, (elapsedTime / waitTime));
+            //     elapsedTime += Time.deltaTime;
+            //     yield return null;
+            // }
+            
+            yield return new WaitForSeconds(2f);
+            gameObject.SetActive(false);
         }
         #endregion
     }

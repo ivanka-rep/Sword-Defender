@@ -1,5 +1,6 @@
 using SwordDefender.Animations;
 using SwordDefender.CharacterControl.Interfaces;
+using SwordDefender.Game;
 using UnityEngine;
 
 namespace SwordDefender.CharacterControl
@@ -31,10 +32,11 @@ namespace SwordDefender.CharacterControl
         #endregion
 
         #region Public Methods
-        public void StopAllActions()
+        public void StopAllActions(bool isDead = false)
         {
             //Debug.Log("StopAllActions");
             m_canControl = false;
+            //if(isDead) GameManager.Instance.StopEnemiesAction();
         }
         #endregion
         

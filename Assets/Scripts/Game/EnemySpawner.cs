@@ -40,6 +40,12 @@ namespace SwordDefender.Game
         #region Public Methods
         public void StartAction(int enemiesAmount) =>
             StartCoroutine(SpawnRoutine(enemiesAmount));
+        //
+        // public void StopAction()
+        // {
+        //     StopAllCoroutines();
+        //     m_enemyCtrlList.ForEach(enemy => {enemy.StopAllActions();});
+        // }
         
         #endregion
         

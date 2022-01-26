@@ -960,6 +960,7 @@ MonoBehaviour:
   rigidbody: {fileID: 459947244307643527}
   animationsManager: {fileID: 459947244307643530}
   combatManager: {fileID: -3576484209477864622}
+  meshRenderer: {fileID: 459947243464649230}
 --- !u!1 &459947244373758033
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using SwordDefender.CharacterControl;
 using UnityEngine;
 
 namespace SwordDefender.Game
@@ -22,5 +19,10 @@ namespace SwordDefender.Game
         {
             enemySpawner.StartAction(10);
         }
+        //
+        // public void StopEnemiesAction()
+        // {
+        //     enemySpawner.StopAction();
+        // }
     }
 }
