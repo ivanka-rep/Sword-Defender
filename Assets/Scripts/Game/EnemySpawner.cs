@@ -51,7 +51,7 @@ namespace SwordDefender.Game
 
         private IEnumerator SpawnRoutine(int enemiesAmount)
         {
-            var enemyCtrl = m_enemyCtrlList.Find(enemy => !enemy.gameObject.activeSelf);
+            var enemyCtrl = GetEnemyObject();
             enemyCtrl.transform.position = positionsList[Random.Range(0, positionsList.Count)].position;
             enemyCtrl.transform.LookAt(playerT);
             enemyCtrl.gameObject.SetActive(true);
@@ -62,6 +62,23 @@ namespace SwordDefender.Game
             
             yield return new WaitForSeconds(3f);
             yield return SpawnRoutine(enemiesAmount);
+        }
+        
+        #endregion
+
+        #region Private Methods
+
+        private EnemyController GetEnemyObject()
+        {
+            var enemyCtrl = m_enemyCtrlList.Find(enemy => !enemy.gameObject.activeSelf);
+            if (enemyCtrl == null)
+            {
+                var obj = Instantiate(objectToPool, m_parent);
+                enemyCtrl = obj.GetComponent<EnemyController>();
+                m_enemyCtrlList.Add(enemyCtrl);
+            }
+
+            return enemyCtrl;
         }
         
         #endregion

@@ -850,6 +850,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: stickman_sword
       objectReference: {fileID: 0}
+    - target: {fileID: 4857272330326630202, guid: 14e202b78189d904c813dca09d54b3f3,
+        type: 3}
+      propertyPath: canMove
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5198191769522767262, guid: 14e202b78189d904c813dca09d54b3f3,
         type: 3}
       propertyPath: m_RootOrder

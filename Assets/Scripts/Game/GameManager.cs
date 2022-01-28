@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace SwordDefender.Game
@@ -17,7 +18,12 @@ namespace SwordDefender.Game
             if (Instance != null) Destroy(Instance); 
             Instance = this;
         }
-        
+
+        private void Start()
+        {
+            StartAction();
+        }
+
         #endregion
 
         #region Public Methods
