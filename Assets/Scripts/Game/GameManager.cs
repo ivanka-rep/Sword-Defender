@@ -9,13 +9,20 @@ namespace SwordDefender.Game
         #endregion
         
         [SerializeField] private EnemySpawner enemySpawner;
+
+        #region Unity Methods
+
         private void Awake()
         { 
             if (Instance != null) Destroy(Instance); 
             Instance = this;
         }
+        
+        #endregion
 
-        private void Start()
+        #region Public Methods
+        
+        public void StartAction()
         {
             enemySpawner.StartAction(10);
         }
@@ -24,5 +31,6 @@ namespace SwordDefender.Game
         {
             enemySpawner.StopAction();
         }
+        #endregion
     }
 }
