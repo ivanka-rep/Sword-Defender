@@ -2,6 +2,7 @@ using System.Collections;
 using Features.GameTagExtension;
 using SwordDefender.Animations;
 using SwordDefender.CharacterControl.Interfaces;
+using SwordDefender.Game;
 using UnityEngine;
 
 namespace SwordDefender.CharacterControl
@@ -12,18 +13,25 @@ namespace SwordDefender.CharacterControl
         [SerializeField] private new Rigidbody rigidbody = null;
         [SerializeField] private AnimationsManager animationsManager = null;
         [SerializeField] private CombatManager combatManager = null;
-        [SerializeField] private SkinnedMeshRenderer meshRenderer = null;
+        // [SerializeField] private SkinnedMeshRenderer meshRenderer = null;
         #endregion
 
         #region Private
+        private GameManager m_gameManager = null;
+        private Transform m_target = null;
         private bool m_canMove = false;
         private bool m_canAttack = true;
-        private float m_speedMultiply = 20; //Задавать значение из конфига.
-        private Transform m_target = null;
+        private float m_speedMultiply = 0;
         #endregion
         
         #region Unity Methods
 
+        private void Start()
+        {
+            m_gameManager = GameManager.Instance;
+            m_speedMultiply = m_gameManager.GameConfig.PlayerStats.Speed;
+        }
+        
         private void Update()
         {
             if (!m_canMove) return;
@@ -40,6 +48,7 @@ namespace SwordDefender.CharacterControl
             m_canMove = false;
             rigidbody.velocity = Vector3.zero;
             animationsManager.SetSpeed(0);
+            
             StartCoroutine(AttackRoutine());
         }
 
@@ -95,19 +104,6 @@ namespace SwordDefender.CharacterControl
 
         private IEnumerator DeathRoutine()
         {
-            // var oldColor = meshRenderer.sharedMaterial.color;
-            // var newColor = new Color(oldColor.r, oldColor.g, oldColor.b, 0f);
-            //
-            // var elapsedTime = 0f;
-            // var waitTime = 2f;
-            //
-            // while (elapsedTime < waitTime)
-            // {
-            //     meshRenderer.sharedMaterial.color = Color.Lerp(oldColor, newColor, (elapsedTime / waitTime));
-            //     elapsedTime += Time.deltaTime;
-            //     yield return null;
-            // }
-            
             yield return new WaitForSeconds(2f);
             gameObject.SetActive(false);
         }

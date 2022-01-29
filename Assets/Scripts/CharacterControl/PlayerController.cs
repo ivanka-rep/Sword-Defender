@@ -1,3 +1,4 @@
+using System;
 using SwordDefender.Animations;
 using SwordDefender.CharacterControl.Interfaces;
 using SwordDefender.Game;
@@ -15,12 +16,21 @@ namespace SwordDefender.CharacterControl
         #endregion
 
         #region Private
-        private float m_speedMultiply = 20; //Задавать значение из конфига.
+
+        private GameManager m_gameManager = null;
+        private float m_speedMultiply = 0;
         private float m_sensitivity = 0.5f; //Задавать как параметр.
         private bool m_canControl = true;
         #endregion
 
         #region Unity Methods
+
+        private void Start()
+        {
+            m_gameManager = GameManager.Instance;
+            m_speedMultiply = m_gameManager.GameConfig.PlayerStats.Speed;
+        }
+
         private void Update()
         {
             if (!m_canControl) return;
@@ -36,7 +46,7 @@ namespace SwordDefender.CharacterControl
         {
             //Debug.Log("StopAllActions");
             m_canControl = false;
-            if(isDead) GameManager.Instance.StopEnemiesAction();
+            if(isDead) m_gameManager.StopEnemiesAction();
         }
         #endregion
         

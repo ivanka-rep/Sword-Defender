@@ -1,15 +1,22 @@
 using System;
+using SwordDefender.Config;
 using UnityEngine;
 
 namespace SwordDefender.Game
 {
     public class GameManager : MonoBehaviour
     {
-        #region Singleton
+        #region Public
         public static GameManager Instance = null;
+        public GameConfig GameConfig => gameConfig;
         #endregion
+
+        #region Serialized Fields
         
-        [SerializeField] private EnemySpawner enemySpawner;
+        [SerializeField] private EnemySpawner enemySpawner = null;
+        [SerializeField] private GameConfig gameConfig = null;
+        
+        #endregion
 
         #region Unity Methods
 

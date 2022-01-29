@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Features.GameTagExtension
 {
-    [CreateAssetMenu(fileName = "GameTag", menuName = "Game Tag", order = 0)]
+    [CreateAssetMenu(fileName = "GameTag", menuName = "ScriptableObjects/GameTag", order = 1)]
     public class GameTag : ScriptableObject
     {
         [SerializeField] private string m_gameTagName;
