@@ -45,7 +45,7 @@ namespace SwordDefender.Animations
         public void SetAttackTrigger(bool flag)
         {
             SetTrigger(flag, Attack);
-            if (flag) StartCoroutine(StopAttackRoutine());
+            //if (flag) StartCoroutine(StopAttackRoutine());
         }
 
         public void StartDeathTrigger(bool flag) =>

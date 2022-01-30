@@ -43,7 +43,7 @@ namespace SwordDefender.CharacterControl
         private void OnTriggerEnter(Collider col)
         {
             if (!col.gameObject.TryGetComponent<GameTagReference>(out var gameTagRef)) return;
-            if (!gameTagRef.ExistsTagName("Player")) return;
+            if (!gameTagRef.ExistsTagName("StopTrigger")) return;
             
             m_canMove = false;
             m_rigidbody.velocity = Vector3.zero;
