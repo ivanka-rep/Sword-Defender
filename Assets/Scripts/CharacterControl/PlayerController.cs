@@ -10,14 +10,13 @@ namespace SwordDefender.CharacterControl
     {
         #region Serialized Fields
         [SerializeField] private bool canMove = true;
-        [SerializeField] private new Rigidbody rigidbody = null;
-        [SerializeField] private AnimationsManager animationsManager = null;
-        [SerializeField] private CombatManager combatManager = null;
         #endregion
 
         #region Private
-
         private GameManager m_gameManager = null;
+        private Rigidbody m_rigidbody = null;
+        private AnimationsManager m_animationsManager = null;
+        private CombatManager m_combatManager = null;
         private float m_speedMultiply = 0;
         private float m_sensitivity = 0.5f; //Задавать как параметр.
         private bool m_canControl = true;
@@ -28,6 +27,9 @@ namespace SwordDefender.CharacterControl
         private void Start()
         {
             m_gameManager = GameManager.Instance;
+            m_rigidbody = gameObject.GetComponent<Rigidbody>();
+            m_animationsManager = gameObject.GetComponent<AnimationsManager>();
+            m_combatManager = gameObject.GetComponent<CombatManager>();
             m_speedMultiply = m_gameManager.GameConfig.PlayerStats.Speed;
         }
 
@@ -54,7 +56,7 @@ namespace SwordDefender.CharacterControl
 
         private void Attack()
         {
-            if (Input.GetAxis("Fire1") > 0) combatManager.Attack();
+            if (Input.GetAxis("Fire1") > 0) m_combatManager.Attack();
         }
 
         private void Move()
@@ -63,15 +65,15 @@ namespace SwordDefender.CharacterControl
             
             var horizontal = Input.GetAxis("Horizontal");
             var vertical = Input.GetAxis("Vertical");
-            var t = rigidbody.transform;
-            rigidbody.velocity = (t.forward * vertical + t.right * horizontal) * m_speedMultiply;
+            var t = m_rigidbody.transform;
+            m_rigidbody.velocity = (t.forward * vertical + t.right * horizontal) * m_speedMultiply;
             
-            animationsManager.SetSpeed(vertical);
+            m_animationsManager.SetSpeed(vertical);
         }
 
         private void Rotate()
         {
-            var yRotation = rigidbody.rotation.eulerAngles.y;
+            var yRotation = m_rigidbody.rotation.eulerAngles.y;
             var rotationSpeed = 0f;
             
             if (Input.touchCount > 0)
@@ -80,7 +82,7 @@ namespace SwordDefender.CharacterControl
 
                 if (touch.phase == TouchPhase.Moved)
                 {
-                    rigidbody.rotation = Quaternion.Euler(0f,yRotation + touch.deltaPosition.x * m_sensitivity, 0f);
+                    m_rigidbody.rotation = Quaternion.Euler(0f,yRotation + touch.deltaPosition.x * m_sensitivity, 0f);
                     rotationSpeed = touch.deltaPosition.x > 0 ? 1 : -1;
                 }
             }
@@ -89,12 +91,12 @@ namespace SwordDefender.CharacterControl
             var mouseX = Input.GetAxis("Mouse X");
             if (mouseX != 0) 
             {
-                rigidbody.rotation = Quaternion.Euler(0f,yRotation + mouseX , 0f);
+                m_rigidbody.rotation = Quaternion.Euler(0f,yRotation + mouseX , 0f);
                 rotationSpeed = mouseX;
             }
 #endif
             
-            animationsManager.SetRotationSpeed(rotationSpeed);
+            m_animationsManager.SetRotationSpeed(rotationSpeed);
         }
         #endregion
     }

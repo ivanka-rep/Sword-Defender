@@ -15,6 +15,8 @@ namespace SwordDefender.CharacterControl
             get => m_healthPoints;
             set
             {
+                if(godMode) return;
+                
                 m_healthPoints = value;
                 if (m_healthPoints <= 0) StartDeathAnim();
             }
@@ -22,27 +24,31 @@ namespace SwordDefender.CharacterControl
         #endregion
         
         #region Serialized Fields
-        [SerializeField] private AnimationsManager animationsManager = null;
         [SerializeField] private GameTag enemyTag;
+        [SerializeField] private bool godMode = false;
         #endregion
 
         #region Private
         private IMovementController m_movementController = null;
+        private AnimationsManager m_animationsManager = null;
         private GameManager m_gameManager = null;
         private int m_healthPoints = 100;
         private int m_damage = 0;
         private bool m_isAttack = false;
+        private bool m_isGodMode = false;
         #endregion
 
         #region Unity Methods
 
         private void Start()
         {
-            m_movementController = gameObject.GetComponent<IMovementController>();
             m_gameManager = GameManager.Instance;
             m_damage = enemyTag.GameTagName == "Enemy"
                 ? m_gameManager.GameConfig.PlayerStats.Damage
                 : m_gameManager.GameConfig.EnemyStats.Damage;
+            
+            m_movementController = gameObject.GetComponent<IMovementController>();
+            m_animationsManager = gameObject.GetComponent<AnimationsManager>();
         }
 
         private void OnTriggerEnter(Collider col)
@@ -59,7 +65,7 @@ namespace SwordDefender.CharacterControl
             
             enemyCombatManager.HealthPoints -= m_damage;
             m_isAttack = false;
-            animationsManager.SetAttackTrigger(false);
+            m_animationsManager.SetAttackTrigger(false);
         }
 
         #endregion
@@ -74,7 +80,7 @@ namespace SwordDefender.CharacterControl
 
         private void StartDeathAnim()
         {
-            animationsManager.StartDeathTrigger(true);
+            m_animationsManager.StartDeathTrigger(true);
             m_movementController.StopAllActions(true);
             m_isAttack = false;
         }
@@ -86,7 +92,7 @@ namespace SwordDefender.CharacterControl
         IEnumerator AttackRoutine()
         {
             m_isAttack = true;
-            animationsManager.SetAttackTrigger(true);
+            m_animationsManager.SetAttackTrigger(true);
             yield return new WaitForSeconds(1f);
             m_isAttack = false;
         }

@@ -9,15 +9,11 @@ namespace SwordDefender.CharacterControl
 {
     public class EnemyController : MonoBehaviour, IMovementController
     {
-        #region Serizlized Fields
-        [SerializeField] private new Rigidbody rigidbody = null;
-        [SerializeField] private AnimationsManager animationsManager = null;
-        [SerializeField] private CombatManager combatManager = null;
-        // [SerializeField] private SkinnedMeshRenderer meshRenderer = null;
-        #endregion
-
         #region Private
         private GameManager m_gameManager = null;
+        private Rigidbody m_rigidbody = null;
+        private CombatManager m_combatManager = null;
+        private AnimationsManager m_animationsManager = null;
         private Transform m_target = null;
         private bool m_canMove = false;
         private bool m_canAttack = true;
@@ -30,6 +26,10 @@ namespace SwordDefender.CharacterControl
         {
             m_gameManager = GameManager.Instance;
             m_speedMultiply = m_gameManager.GameConfig.PlayerStats.Speed;
+
+            m_rigidbody = gameObject.GetComponent<Rigidbody>();
+            m_combatManager = gameObject.GetComponent<CombatManager>();
+            m_animationsManager = gameObject.GetComponent<AnimationsManager>();
         }
         
         private void Update()
@@ -46,8 +46,8 @@ namespace SwordDefender.CharacterControl
             if (!gameTagRef.ExistsTagName("Player")) return;
             
             m_canMove = false;
-            rigidbody.velocity = Vector3.zero;
-            animationsManager.SetSpeed(0);
+            m_rigidbody.velocity = Vector3.zero;
+            m_animationsManager.SetSpeed(0);
             
             StartCoroutine(AttackRoutine());
         }
@@ -80,9 +80,9 @@ namespace SwordDefender.CharacterControl
         private void Move()
         {
             var speed = m_canMove ? 1f : 0;
-            var t = rigidbody.transform;
-            rigidbody.velocity = t.forward * (speed * m_speedMultiply);
-            animationsManager.SetSpeed(speed);
+            var t = m_rigidbody.transform;
+            m_rigidbody.velocity = t.forward * (speed * m_speedMultiply);
+            m_animationsManager.SetSpeed(speed);
         }
 
         private void Rotate() =>
@@ -97,7 +97,7 @@ namespace SwordDefender.CharacterControl
             if (!m_canAttack) yield break;
             var wfs = new WaitForSeconds(1f);
             
-            combatManager.Attack();
+            m_combatManager.Attack();
             yield return wfs;
             yield return AttackRoutine();
         }
