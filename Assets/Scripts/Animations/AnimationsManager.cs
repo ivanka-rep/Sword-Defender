@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -5,10 +6,6 @@ namespace SwordDefender.Animations
 {
     public class AnimationsManager : MonoBehaviour
     {
-        #region Serialized Fields
-        [SerializeField] private Animator animator = null;
-        #endregion
-        
         #region Indexes
         private static readonly int Speed = Animator.StringToHash("Speed");
         private static readonly int RotationSpeed = Animator.StringToHash("RotationSpeed");
@@ -18,20 +15,27 @@ namespace SwordDefender.Animations
         #endregion
 
         #region Private
+        private Animator m_animator = null;
         private float m_rotationSpeed = 0f;
-        private bool m_isTurning = false;
+        #endregion
+
+        #region Unity Methods
+
+        private void Awake() =>
+            m_animator = gameObject.GetComponent<Animator>();
+
         #endregion
         
         #region Public Methods
         
         public void SetSpeed(float speed) =>
-            animator.SetFloat(Speed, speed);
+            m_animator.SetFloat(Speed, speed);
 
         public void SetRotationSpeed(float speed)
         {
             m_rotationSpeed = speed;
-            animator.SetFloat(RotationSpeed, speed);
-            animator.SetBool(IsTurning, true);
+            m_animator.SetFloat(RotationSpeed, speed);
+            m_animator.SetBool(IsTurning, true);
             
             if (speed == 0)
                 StartCoroutine(CheckForTurningRoutine());
@@ -53,8 +57,8 @@ namespace SwordDefender.Animations
 
         private void SetTrigger(bool flag, int id)
         {
-            if (flag) animator.SetTrigger(id);
-            else animator.ResetTrigger(id);
+            if (flag) m_animator.SetTrigger(id);
+            else m_animator.ResetTrigger(id);
         }
         #endregion
         
@@ -81,7 +85,7 @@ namespace SwordDefender.Animations
 
             if (rotationSpeed < 0.1f && rotationSpeed > -0.1)
             {
-                animator.SetBool(IsTurning, false);
+                m_animator.SetBool(IsTurning, false);
             }
             
         }
