@@ -30,26 +30,33 @@ namespace SwordDefender.CharacterControl
         
         private IMovementController m_movementController = null;
         private AnimationsManager m_animationsManager = null;
+        private ParticlesManager m_particlesManager = null;
         private GameManager m_gameManager = null;
         private int m_healthPoints = 100;
         private int m_damage = 0;
+        private bool m_isPlayer = false;
         private bool m_isAttack = false;
 
-        private readonly int m_maxDistance = 5;
-        private readonly Vector3 m_checkBoxHalfSize = new Vector3(3f, 0.25f, 2);
+        private readonly int m_castMaxDistance = 7; //to config
+        private readonly Vector3 m_checkBoxHalfSize = new Vector3(3f, 0.25f, 2); //to config
         #endregion
 
         #region Unity Methods
 
+        private void Awake()
+        {
+            m_isPlayer = enemyTag.GameTagName == "Enemy";
+            m_movementController = gameObject.GetComponent<IMovementController>();
+            m_animationsManager = gameObject.GetComponent<AnimationsManager>();
+            m_particlesManager = m_isPlayer ? gameObject.GetComponent<ParticlesManager>() : default;
+        }
+
         private void Start()
         {
             m_gameManager = GameManager.Instance;
-            m_damage = enemyTag.GameTagName == "Enemy"
+            m_damage = m_isPlayer
                 ? m_gameManager.GameConfig.PlayerStats.Damage
                 : m_gameManager.GameConfig.EnemyStats.Damage;
-            
-            m_movementController = gameObject.GetComponent<IMovementController>();
-            m_animationsManager = gameObject.GetComponent<AnimationsManager>();
         }
         #endregion
 
@@ -78,7 +85,7 @@ namespace SwordDefender.CharacterControl
             m_isAttack = true;
             m_animationsManager.SetAttackTrigger(true);
 
-            var castResults = Physics.BoxCastAll(boxCenter, m_checkBoxHalfSize, t.forward, boxRotation, m_maxDistance);
+            var castResults = Physics.BoxCastAll(boxCenter, m_checkBoxHalfSize, t.forward, boxRotation, m_castMaxDistance);
             if (castResults.Length > 0)
             {
                 foreach (var castResult in castResults)
@@ -101,6 +108,7 @@ namespace SwordDefender.CharacterControl
             yield return new WaitForSeconds(0.5f);
             m_isAttack = false;
             m_animationsManager.SetAttackTrigger(false);
+            if (m_isPlayer) m_particlesManager.PlayAttackParticle();
         }
         #endregion
         

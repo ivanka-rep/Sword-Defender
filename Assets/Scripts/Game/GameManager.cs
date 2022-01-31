@@ -37,7 +37,7 @@ namespace SwordDefender.Game
         
         public void StartAction()
         {
-            enemySpawner.StartAction(100);
+            enemySpawner.StartAction(10);
         }
         
         public void StopEnemiesAction()
