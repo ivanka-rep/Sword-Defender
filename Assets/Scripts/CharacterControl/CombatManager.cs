@@ -10,26 +10,24 @@ namespace SwordDefender.CharacterControl
 {
     public class CombatManager : MonoBehaviour
     {
-        #region Public
-        public int HealthPoints
-        {
-            get => m_healthPoints;
-            set
-            {
-                if(godMode) return;
-                
-                m_healthPoints = value;
-                if (m_healthPoints <= 0) StartDeathAnim();
-            }
-        }
-        #endregion
-        
         #region Serialized Fields
         [SerializeField] private GameTag enemyTag = null;
         [SerializeField] private bool godMode = false;
         #endregion
 
         #region Private
+        private int HealthPoints //Available only for this class instances
+        {
+            get => m_healthPoints;
+            set
+            {
+                if(godMode || m_healthPoints <= 0) return;
+                
+                m_healthPoints = value;
+                if (m_healthPoints <= 0) StartDeathAnim();
+            }
+        }
+        
         private IMovementController m_movementController = null;
         private AnimationsManager m_animationsManager = null;
         private GameManager m_gameManager = null;
@@ -56,6 +54,10 @@ namespace SwordDefender.CharacterControl
         #endregion
 
         #region Public Methods
+
+        public void Refresh() =>
+            m_healthPoints = 100;
+
         public void Attack()
         {
             if(m_isAttack) return;

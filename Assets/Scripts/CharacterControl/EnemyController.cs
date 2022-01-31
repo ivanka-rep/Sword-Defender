@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Features.GameTagExtension;
 using SwordDefender.Animations;
@@ -22,14 +23,17 @@ namespace SwordDefender.CharacterControl
         
         #region Unity Methods
 
+        private void Awake()
+        {
+            m_rigidbody = gameObject.GetComponent<Rigidbody>();
+            m_combatManager = gameObject.GetComponent<CombatManager>();
+            m_animationsManager = gameObject.GetComponent<AnimationsManager>();
+        }
+
         private void Start()
         {
             m_gameManager = GameManager.Instance;
             m_speedMultiply = m_gameManager.GameConfig.PlayerStats.Speed;
-
-            m_rigidbody = gameObject.GetComponent<Rigidbody>();
-            m_combatManager = gameObject.GetComponent<CombatManager>();
-            m_animationsManager = gameObject.GetComponent<AnimationsManager>();
         }
         
         private void Update()
@@ -64,6 +68,7 @@ namespace SwordDefender.CharacterControl
             }
             
             m_target = target;
+            m_combatManager.Refresh();
             Rotate();
             m_canMove = true;
             m_canAttack = true;
