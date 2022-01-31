@@ -20,6 +20,7 @@ namespace Features
             for (int i = 0; i < m_amountToPool; i++)
             {
                 GameObject tmp = Instantiate(m_objectToPool, m_parent);
+                tmp.SetActive(true);
                 m_pooledObjects.Add(tmp);
             }
         }
