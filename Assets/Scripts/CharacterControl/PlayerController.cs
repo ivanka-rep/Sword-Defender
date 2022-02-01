@@ -56,7 +56,9 @@ namespace SwordDefender.CharacterControl
 
         private void Attack()
         {
+#if UNITY_EDITOR
             if (Input.GetAxis("Fire1") > 0) m_combatManager.Attack();
+#endif
         }
 
         private void Move()

@@ -22,8 +22,8 @@ namespace SwordDefender.CharacterControl
             set
             {
                 if(godMode || m_healthPoints <= 0) return;
-                
                 m_healthPoints = value;
+                if (m_isPlayer) GameEventManager.SendPlayerHealthChanged(m_healthPoints);
                 if (m_healthPoints <= 0) StartDeathAnim();
             }
         }
