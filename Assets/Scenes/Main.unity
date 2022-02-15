@@ -1341,7 +1341,7 @@ GameObject:
   - component: {fileID: 1357012431}
   - component: {fileID: 1357012430}
   m_Layer: 5
-  m_Name: GameHoodView
+  m_Name: GameHudView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

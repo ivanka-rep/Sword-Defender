@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace SwordDefender.UI
 {
-    public class GameHoodViewManager : MonoBehaviour
+    public class GameHudViewManager : MonoBehaviour
     {
         #region Serialized Fields
 
