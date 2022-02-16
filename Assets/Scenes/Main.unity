@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692282, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -698,6 +698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4465e0217ef9ae4489db4a5defc1db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnabled: 1
   objectToPool: {fileID: 459947244307643520, guid: 0cfea4715f6404e4eb26af5e876f19a1,
     type: 3}
   amountToPool: 20
@@ -1897,6 +1898,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: stickman_sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 4857272330326630180, guid: 14e202b78189d904c813dca09d54b3f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4857272330326630202, guid: 14e202b78189d904c813dca09d54b3f3,
         type: 3}

@@ -9,6 +9,7 @@ namespace SwordDefender.Game
     public class EnemySpawner : MonoBehaviour
     {
         #region Serialized Fields
+        [SerializeField] private bool isEnabled = true;
         [SerializeField] private GameObject objectToPool;
         [SerializeField] private int amountToPool;
         [SerializeField] private Transform playerT = null;
@@ -25,6 +26,8 @@ namespace SwordDefender.Game
         #region Unity Methods
         private void Awake()
         {
+            if (!isEnabled) return;
+            
             m_parent = transform;
             for (int i = 0; i < amountToPool; i++)
             {
@@ -51,6 +54,8 @@ namespace SwordDefender.Game
 
         private IEnumerator SpawnRoutine(int enemiesAmount)
         {
+            if (!isEnabled) yield break;
+            
             var enemyCtrl = GetEnemyObject();
             enemyCtrl.transform.position = positionsList[Random.Range(0, positionsList.Count)].position;
             enemyCtrl.transform.LookAt(playerT);

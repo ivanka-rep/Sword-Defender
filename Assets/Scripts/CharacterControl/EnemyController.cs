@@ -36,7 +36,7 @@ namespace SwordDefender.CharacterControl
             m_speedMultiply = m_gameManager.GameConfig.PlayerStats.Speed;
         }
         
-        private void Update()
+        private void FixedUpdate()
         {
             if (!m_canMove) return;
             
