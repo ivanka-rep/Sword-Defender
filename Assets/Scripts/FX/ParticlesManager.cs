@@ -5,30 +5,19 @@ using UnityEngine;
 public class ParticlesManager : MonoBehaviour
 {
   #region Serialized Fields
-  [SerializeField] private List<ObjectPool> attackParticlesPools = null;
-  #endregion
-
-  #region Private
-  private List<ParticleSystem> m_attackParticles = null;
-  #endregion
-
-  #region Unity Methods
-  private void Start()
-  {
-    m_attackParticles = new List<ParticleSystem>();
-    
-    attackParticlesPools.ForEach(pool => 
-    { pool.PooledObjects.ForEach(obj => 
-      m_attackParticles.Add(obj.GetComponent<ParticleSystem>())); });
-  }
+  [SerializeField] private List<ParticleSystem> attackParticlesList = null;
   #endregion
 
   #region Public
 
   public void PlayAttackParticle()
   {
-    var particle = m_attackParticles[Random.Range(0, m_attackParticles.Count)];
+    var particle = attackParticlesList[Random.Range(0, attackParticlesList.Count)];
     ChangeParticlePos(particle.transform);
+    
+    if(!particle.gameObject.activeSelf)
+        particle.gameObject.SetActive(true);
+    
     particle.Play();
   }
 
