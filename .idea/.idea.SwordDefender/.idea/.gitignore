@@ -2,9 +2,9 @@
 /shelf/
 /workspace.xml
 # Rider ignored files
-/projectSettingsUpdater.xml
-/.idea.Sword-Defender.iml
 /contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.SwordDefender.iml
 /modules.xml
 # Datasource local storage ignored files
 /dataSources/
