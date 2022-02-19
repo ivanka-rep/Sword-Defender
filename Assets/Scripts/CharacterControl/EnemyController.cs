@@ -16,9 +16,10 @@ namespace SwordDefender.CharacterControl
         private CombatManager m_combatManager = null;
         private AnimationsManager m_animationsManager = null;
         private Transform m_target = null;
-        private bool m_canMove = false;
         private bool m_canAttack = true;
-        private float m_speedMultiply = 0;
+        
+        private float m_speed = 20f; //todo: реализовать preloader, после чего инициализировать в Awake
+        private float m_distanceOffset = 4f; //to config
         #endregion
         
         #region Unity Methods
@@ -33,27 +34,7 @@ namespace SwordDefender.CharacterControl
         private void Start()
         {
             m_gameManager = GameManager.Instance;
-            m_speedMultiply = m_gameManager.GameConfig.PlayerStats.Speed;
-        }
-        
-        private void FixedUpdate()
-        {
-            if (!m_canMove) return;
-            
-            Move();
-            Rotate();
-        }
-
-        private void OnTriggerEnter(Collider col)
-        {
-            if (!col.gameObject.TryGetComponent<GameTagReference>(out var gameTagRef)) return;
-            if (!gameTagRef.ExistsTagName("StopTrigger")) return;
-            
-            m_canMove = false;
-            m_rigidbody.velocity = Vector3.zero;
-            m_animationsManager.SetSpeed(0);
-            
-            StartCoroutine(AttackRoutine());
+            m_speed = m_gameManager.GameConfig.PlayerStats.Speed;
         }
 
         #endregion
@@ -61,17 +42,11 @@ namespace SwordDefender.CharacterControl
         #region Public Methods
         public void StartMoving(Transform target)
         {
-            if (target == null)
-            {
-                Debug.LogError("Target is null");
-                return;
-            }
-            
             m_target = target;
             m_combatManager.Refresh();
-            Rotate();
-            m_canMove = true;
             m_canAttack = true;
+            
+            StartCoroutine(MoveRoutine());
         }
         
         public void StopAllActions(bool isDead = false)
@@ -81,30 +56,38 @@ namespace SwordDefender.CharacterControl
         }
         #endregion
         
-        #region Private
-        private void Move()
-        {
-            var speed = m_canMove ? 1f : 0;
-            var t = m_rigidbody.transform;
-            m_rigidbody.velocity = t.forward * (speed * m_speedMultiply);
-            m_animationsManager.SetSpeed(speed);
-        }
-
-        private void Rotate() =>
-            transform.LookAt(m_target);
-        
-        #endregion
-
         #region Coroutines
 
+        private IEnumerator MoveRoutine()
+        {
+            var distance = Vector3.Distance(transform.position, m_target.position) - m_distanceOffset;
+            var time = distance / m_speed;
+            var timeElapsed = 0f;
+            
+            transform.LookAt(m_target);
+            m_animationsManager.SetSpeed(1f);
+
+            while (timeElapsed < time)
+            {
+                m_rigidbody.velocity = transform.forward * m_speed;
+                timeElapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            m_rigidbody.velocity = Vector3.zero;
+            m_animationsManager.SetSpeed(0);
+            
+            StartCoroutine(AttackRoutine());
+        }
+        
         private IEnumerator AttackRoutine()
         {
-            if (!m_canAttack) yield break;
-            var wfs = new WaitForSeconds(1f);
-            
-            m_combatManager.Attack();
-            yield return wfs;
-            yield return AttackRoutine();
+            while (m_canAttack)
+            {
+                m_combatManager.Attack();
+                transform.LookAt(m_target);
+                yield return new WaitForSeconds(1f);
+            }
         }
 
         private IEnumerator DeathRoutine()

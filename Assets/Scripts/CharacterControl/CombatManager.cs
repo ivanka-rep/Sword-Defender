@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Features.GameTagExtension;
 using SwordDefender.Animations;
 using SwordDefender.CharacterControl.Interfaces;
@@ -11,8 +13,9 @@ namespace SwordDefender.CharacterControl
     public class CombatManager : MonoBehaviour
     {
         #region Serialized Fields
-        [SerializeField] private GameTag enemyTag = null;
+        [SerializeField] private bool isPlayer = false;
         [SerializeField] private bool godMode = false;
+        [SerializeField] private LayerMask layerMask = 0;
         #endregion
 
         #region Private
@@ -23,7 +26,7 @@ namespace SwordDefender.CharacterControl
             {
                 if(godMode || m_healthPoints <= 0) return;
                 m_healthPoints = value;
-                if (m_isPlayer) GameEventManager.SendPlayerHealthChanged(m_healthPoints);
+                if (isPlayer) GameEventManager.SendPlayerHealthChanged(m_healthPoints);
                 if (m_healthPoints <= 0) StartDeathAnim();
             }
         }
@@ -34,10 +37,9 @@ namespace SwordDefender.CharacterControl
         private GameManager m_gameManager = null;
         private int m_healthPoints = 100;
         private int m_damage = 0;
-        private bool m_isPlayer = false;
         private bool m_isAttack = false;
 
-        private readonly int m_castMaxDistance = 7; //to config
+        private readonly int m_castMaxDistance = 10; //to config
         private readonly Vector3 m_checkBoxHalfSize = new Vector3(3f, 0.25f, 2); //to config
         #endregion
 
@@ -45,16 +47,15 @@ namespace SwordDefender.CharacterControl
 
         private void Awake()
         {
-            m_isPlayer = enemyTag.GameTagName == "Enemy";
             m_movementController = gameObject.GetComponent<IMovementController>();
             m_animationsManager = gameObject.GetComponent<AnimationsManager>();
-            m_particlesManager = m_isPlayer ? gameObject.GetComponent<ParticlesManager>() : default;
+            m_particlesManager = isPlayer ? gameObject.GetComponent<ParticlesManager>() : default;
         }
 
         private void Start()
         {
             m_gameManager = GameManager.Instance;
-            m_damage = m_isPlayer
+            m_damage = isPlayer
                 ? m_gameManager.GameConfig.PlayerStats.Damage
                 : m_gameManager.GameConfig.EnemyStats.Damage;
         }
@@ -85,30 +86,20 @@ namespace SwordDefender.CharacterControl
             m_isAttack = true;
             m_animationsManager.SetAttackTrigger(true);
 
-            var castResults = Physics.BoxCastAll(boxCenter, m_checkBoxHalfSize, t.forward, boxRotation, m_castMaxDistance);
-            if (castResults.Length > 0)
-            {
-                foreach (var castResult in castResults)
-                {
-                    var col = castResult.collider;
-                
-                    if (!col.gameObject.TryGetComponent<GameTagReference>(out var gameTagRef))
-                        gameTagRef = col.gameObject.GetComponentInParent<GameTagReference>();
-            
-                    if(gameTagRef == null || !gameTagRef.ExistsTagName(enemyTag.GameTagName)) continue;
+            var castResults = new RaycastHit[10];
+            int hits = Physics.BoxCastNonAlloc(boxCenter, m_checkBoxHalfSize, t.forward, castResults, boxRotation, m_castMaxDistance, layerMask);
 
-                    var enemyCombatManager = col.gameObject.TryGetComponent<CombatManager>(out var combatManager) 
-                        ? combatManager 
-                        : col.gameObject.GetComponentInParent<CombatManager>();
-            
-                    enemyCombatManager.HealthPoints -= m_damage;   
-                }
+            for (int i = 0; i < hits; i++)
+            {
+                var col = castResults[i].collider;
+                var enemyCombatManager = col.gameObject.GetComponent<CombatManager>();
+                enemyCombatManager.HealthPoints -= m_damage;   
             }
 
             yield return new WaitForSeconds(0.5f);
             m_isAttack = false;
             m_animationsManager.SetAttackTrigger(false);
-            if (m_isPlayer) m_particlesManager.PlayAttackParticle();
+            if (isPlayer) m_particlesManager.PlayAttackParticle();
         }
         #endregion
         
