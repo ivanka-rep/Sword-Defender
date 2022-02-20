@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Features;
 using UnityEngine;
 
 public class ParticlesManager : MonoBehaviour

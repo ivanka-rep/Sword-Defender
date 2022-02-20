@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -42,11 +41,9 @@ namespace SwordDefender.Animations
             
         }
 
-        public void SetAttackTrigger(bool flag)
-        {
+        public void SetAttackTrigger(bool flag) =>
             SetTrigger(flag, Attack);
-            //if (flag) StartCoroutine(StopAttackRoutine());
-        }
+        
 
         public void StartDeathTrigger(bool flag) =>
             SetTrigger(flag, Dead);
@@ -63,12 +60,6 @@ namespace SwordDefender.Animations
         #endregion
         
         #region Coroutines
-
-        private IEnumerator StopAttackRoutine()
-        {
-            yield return new WaitForSeconds(0.5f);
-            SetAttackTrigger(false);
-        }
 
         private IEnumerator CheckForTurningRoutine()
         {

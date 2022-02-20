@@ -1,8 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using Features.GameTagExtension;
 using SwordDefender.Animations;
 using SwordDefender.CharacterControl.Interfaces;
 using SwordDefender.Game;

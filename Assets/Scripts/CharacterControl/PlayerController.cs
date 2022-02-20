@@ -1,4 +1,3 @@
-using System;
 using SwordDefender.Animations;
 using SwordDefender.CharacterControl.Interfaces;
 using SwordDefender.Game;
