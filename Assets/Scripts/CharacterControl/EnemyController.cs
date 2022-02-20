@@ -18,23 +18,21 @@ namespace SwordDefender.CharacterControl
         private Transform m_target = null;
         private bool m_canAttack = true;
         
-        private float m_speed = 20f; //todo: реализовать preloader, после чего инициализировать в Awake
-        private float m_distanceOffset = 4f; //to config
+        private float m_speed = 0;
+        private float m_distanceOffset = 0;
         #endregion
         
         #region Unity Methods
 
         private void Awake()
         {
+            m_gameManager = GameManager.Instance;
+            m_speed = m_gameManager.Config.EnemyParams.Speed;
+            m_distanceOffset = m_gameManager.Config.EnemyParams.DistanceToPlayerOffset;
+            
             m_rigidbody = gameObject.GetComponent<Rigidbody>();
             m_combatManager = gameObject.GetComponent<CombatManager>();
             m_animationsManager = gameObject.GetComponent<AnimationsManager>();
-        }
-
-        private void Start()
-        {
-            m_gameManager = GameManager.Instance;
-            m_speed = m_gameManager.GameConfig.PlayerStats.Speed;
         }
 
         #endregion

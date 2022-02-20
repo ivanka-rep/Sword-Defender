@@ -1,6 +1,6 @@
-using System;
 using SwordDefender.Config;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace SwordDefender.Game
 {
@@ -8,41 +8,29 @@ namespace SwordDefender.Game
     {
         #region Public
         public static GameManager Instance = null;
-        public GameConfig GameConfig => gameConfig;
+        public GameConfig Config => config;
         #endregion
 
         #region Serialized Fields
-        
-        [SerializeField] private EnemySpawner enemySpawner = null;
-        [SerializeField] private GameConfig gameConfig = null;
-        
+        [SerializeField] private GameConfig config = null;
         #endregion
-
+        
         #region Unity Methods
 
         private void Awake()
         { 
             if (Instance != null) Destroy(Instance); 
             Instance = this;
-        }
+            DontDestroyOnLoad(Instance);
 
-        private void Start()
-        {
-            StartAction();
+            SceneManager.LoadScene("Main");
         }
-
         #endregion
 
         #region Public Methods
-        
         public void StartAction()
         {
-            enemySpawner.StartAction(10);
-        }
-        
-        public void StopEnemiesAction()
-        {
-            enemySpawner.StopAction();
+            GameEventManager.SendGameProcessStarted();
         }
         #endregion
     }

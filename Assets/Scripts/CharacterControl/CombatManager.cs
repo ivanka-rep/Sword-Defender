@@ -39,25 +39,24 @@ namespace SwordDefender.CharacterControl
         private int m_damage = 0;
         private bool m_isAttack = false;
 
-        private readonly int m_castMaxDistance = 10; //to config
-        private readonly Vector3 m_checkBoxHalfSize = new Vector3(3f, 0.25f, 2); //to config
+        private int m_castMaxDistance = 0;
+        private Vector3 m_checkBoxHalfSize = Vector3.zero;
         #endregion
 
         #region Unity Methods
 
         private void Awake()
         {
+            m_gameManager = GameManager.Instance;
+            m_castMaxDistance = m_gameManager.Config.CombatParams.BoxCastMaxDistance;
+            m_checkBoxHalfSize = m_gameManager.Config.CombatParams.CheckBoxHalfSize;
+            m_damage = isPlayer
+                ? m_gameManager.Config.PlayerParams.Damage
+                : m_gameManager.Config.EnemyParams.Damage;
+
             m_movementController = gameObject.GetComponent<IMovementController>();
             m_animationsManager = gameObject.GetComponent<AnimationsManager>();
             m_particlesManager = isPlayer ? gameObject.GetComponent<ParticlesManager>() : default;
-        }
-
-        private void Start()
-        {
-            m_gameManager = GameManager.Instance;
-            m_damage = isPlayer
-                ? m_gameManager.GameConfig.PlayerStats.Damage
-                : m_gameManager.GameConfig.EnemyStats.Damage;
         }
         #endregion
 

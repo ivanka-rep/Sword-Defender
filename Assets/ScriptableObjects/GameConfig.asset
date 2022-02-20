@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb84e6bfd7e64c34a843fb7219efb58b, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
-  playerStats:
+  PlayerStats:
     damage: 100
     speed: 20
-  enemyStats:
+  EnemyStats:
     damage: 10
     speed: 20
+    distanceToPlayerOffset: 4
+    enemiesAmount: 10

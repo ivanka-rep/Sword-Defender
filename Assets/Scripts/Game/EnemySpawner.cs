@@ -20,6 +20,7 @@ namespace SwordDefender.Game
         private readonly List<EnemyController> m_enemyCtrlList = new List<EnemyController>();
         
         private Transform m_parent = null;
+        private int m_enemiesToSpawn = 0;
         private int m_enemiesCount = 0;
         #endregion
         
@@ -27,6 +28,10 @@ namespace SwordDefender.Game
         private void Awake()
         {
             if (!isEnabled) return;
+
+            m_enemiesToSpawn = GameManager.Instance.Config.EnemyParams.EnemiesAmount;
+            GameEventManager.OnGameProcessStarted.AddListener(StartAction);
+            GameEventManager.OnGameProcessEnded.AddListener(StopAction);
             
             m_parent = transform;
             for (int i = 0; i < amountToPool; i++)
@@ -37,21 +42,34 @@ namespace SwordDefender.Game
             }
         }
         #endregion
+
+        #region Private Methods
+
+        private void StartAction() =>
+            StartCoroutine(SpawnRoutine(m_enemiesToSpawn));
         
-        #region Public Methods
-        public void StartAction(int enemiesAmount) =>
-            StartCoroutine(SpawnRoutine(enemiesAmount));
-        
-        public void StopAction()
+        private void StopAction()
         {
             StopAllCoroutines();
             m_enemyCtrlList.ForEach(enemy => {enemy.StopAllActions();});
         }
         
+        private EnemyController GetEnemyObject()
+        {
+            var enemyCtrl = m_enemyCtrlList.Find(enemy => !enemy.gameObject.activeSelf);
+            if (enemyCtrl == null)
+            {
+                var obj = Instantiate(objectToPool, m_parent);
+                enemyCtrl = obj.GetComponent<EnemyController>();
+                m_enemyCtrlList.Add(enemyCtrl);
+            }
+
+            return enemyCtrl;
+        }
+
         #endregion
         
         #region Coroutines
-
         private IEnumerator SpawnRoutine(int enemiesAmount)
         {
             if (!isEnabled) yield break;
@@ -68,24 +86,6 @@ namespace SwordDefender.Game
             yield return new WaitForSeconds(3f);
             yield return SpawnRoutine(enemiesAmount);
         }
-        
-        #endregion
-
-        #region Private Methods
-
-        private EnemyController GetEnemyObject()
-        {
-            var enemyCtrl = m_enemyCtrlList.Find(enemy => !enemy.gameObject.activeSelf);
-            if (enemyCtrl == null)
-            {
-                var obj = Instantiate(objectToPool, m_parent);
-                enemyCtrl = obj.GetComponent<EnemyController>();
-                m_enemyCtrlList.Add(enemyCtrl);
-            }
-
-            return enemyCtrl;
-        }
-        
         #endregion
     }
 }

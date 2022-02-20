@@ -8,10 +8,16 @@ namespace SwordDefender.Game
     public class GameEventManager
     {
         public static readonly UnityEvent<int> OnPlayerHealthChanged = new UnityEvent<int>();
-
-        public static void SendPlayerHealthChanged(int health)
-        {
+        public static readonly UnityEvent OnGameProcessStarted = new UnityEvent();
+        public static readonly UnityEvent OnGameProcessEnded = new UnityEvent();
+        
+        public static void SendPlayerHealthChanged(int health) =>
             OnPlayerHealthChanged.Invoke(health);
-        }
+        
+        public static void SendGameProcessStarted() =>
+            OnGameProcessStarted.Invoke();
+        
+        public static void SendGameProcessEnded() =>
+            OnGameProcessEnded.Invoke();
     }
 }

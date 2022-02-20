@@ -13,11 +13,10 @@ namespace SwordDefender.CharacterControl
         #endregion
 
         #region Private
-        private GameManager m_gameManager = null;
         private Rigidbody m_rigidbody = null;
         private AnimationsManager m_animationsManager = null;
         private CombatManager m_combatManager = null;
-        private float m_speedMultiply = 0;
+        private float m_speed = 0;
         private float m_sensitivity = 0.5f; //Задавать как параметр.
         private bool m_canControl = true;
         #endregion
@@ -26,11 +25,10 @@ namespace SwordDefender.CharacterControl
 
         private void Start()
         {
-            m_gameManager = GameManager.Instance;
             m_rigidbody = gameObject.GetComponent<Rigidbody>();
             m_animationsManager = gameObject.GetComponent<AnimationsManager>();
             m_combatManager = gameObject.GetComponent<CombatManager>();
-            m_speedMultiply = m_gameManager.GameConfig.PlayerStats.Speed;
+            m_speed = GameManager.Instance.Config.PlayerParams.Speed;
         }
 
         private void Update()
@@ -46,9 +44,8 @@ namespace SwordDefender.CharacterControl
         #region Public Methods
         public void StopAllActions(bool isDead = false)
         {
-            //Debug.Log("StopAllActions");
             m_canControl = false;
-            if(isDead) m_gameManager.StopEnemiesAction();
+            if(isDead) GameEventManager.SendGameProcessEnded();
         }
         #endregion
         
@@ -68,7 +65,7 @@ namespace SwordDefender.CharacterControl
             var horizontal = Input.GetAxis("Horizontal");
             var vertical = Input.GetAxis("Vertical");
             var t = m_rigidbody.transform;
-            m_rigidbody.velocity = (t.forward * vertical + t.right * horizontal) * m_speedMultiply;
+            m_rigidbody.velocity = (t.forward * vertical + t.right * horizontal) * m_speed;
             
             m_animationsManager.SetSpeed(vertical);
         }
