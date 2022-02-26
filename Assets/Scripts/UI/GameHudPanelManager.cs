@@ -1,13 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using SwordDefender.Game;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace SwordDefender.UI
 {
-    public class GameHudViewManager : MonoBehaviour
+    public class GameHudPanelManager : PanelBase
     {
         #region Serialized Fields
 
@@ -20,6 +17,7 @@ namespace SwordDefender.UI
         private void Awake()
         {
             GameEventManager.OnPlayerHealthChanged.AddListener(health => healthSlider.value = health / 100f);
+            GameEventManager.OnGameProcessEnded.AddListener(() => PanelsManager.Instance.ActivateMenuPanel(this));
         }
 
         #endregion

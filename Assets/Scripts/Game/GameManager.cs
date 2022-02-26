@@ -9,6 +9,8 @@ namespace SwordDefender.Game
         #region Public
         public static GameManager Instance = null;
         public GameConfig Config => config;
+        
+        [HideInInspector] public bool IsGameActive = false;
         #endregion
 
         #region Serialized Fields
@@ -23,6 +25,7 @@ namespace SwordDefender.Game
             Instance = this;
             DontDestroyOnLoad(Instance);
 
+            GameEventManager.OnGameProcessEnded.AddListener(() => { IsGameActive = false; });
             SceneManager.LoadScene("Main");
         }
         #endregion
@@ -30,6 +33,7 @@ namespace SwordDefender.Game
         #region Public Methods
         public void StartAction()
         {
+            IsGameActive = true;
             GameEventManager.SendGameProcessStarted();
         }
         #endregion
