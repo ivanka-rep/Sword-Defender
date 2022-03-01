@@ -17,17 +17,20 @@ namespace SwordDefender.CharacterControl
         private CombatManager m_combatManager = null;
         private float m_speed = 0;
         private float m_sensitivity = 0.5f; //Задавать как параметр.
-        private bool m_canControl = true;
+        private bool m_canControl = false;
         #endregion
 
         #region Unity Methods
 
-        private void Start()
+        private void Awake()
         {
             m_rigidbody = gameObject.GetComponent<Rigidbody>();
             m_animationsManager = gameObject.GetComponent<AnimationsManager>();
             m_combatManager = gameObject.GetComponent<CombatManager>();
             m_speed = GameManager.Instance.Config.PlayerParams.Speed;
+            
+            GameEventManager.OnGameProcessStarted.AddListener(StartAction);
+            GameEventManager.OnGameProcessEnded.AddListener(() => m_canControl = false);
         }
 
         private void Update()
@@ -41,15 +44,19 @@ namespace SwordDefender.CharacterControl
         #endregion
 
         #region Public Methods
-        public void StopAllActions(bool isDead = false)
-        {
-            m_canControl = false;
-            if(isDead) GameEventManager.SendGameProcessEnded();
-        }
+        public void StopAction() =>
+            GameEventManager.SendGameProcessEnded();
+
         #endregion
         
         #region Private Methods
 
+        private void StartAction()
+        {
+            m_combatManager.Refresh();
+            m_canControl = true;
+        }
+        
         private void Attack()
         {
 #if UNITY_EDITOR

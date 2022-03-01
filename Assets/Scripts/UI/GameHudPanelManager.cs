@@ -1,3 +1,4 @@
+using System.Collections;
 using SwordDefender.Game;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,9 +18,18 @@ namespace SwordDefender.UI
         private void Awake()
         {
             GameEventManager.OnPlayerHealthChanged.AddListener(health => healthSlider.value = health / 100f);
-            GameEventManager.OnGameProcessEnded.AddListener(() => PanelsManager.Instance.ActivateMenuPanel(this));
+            GameEventManager.OnGameProcessEnded.AddListener(() => StartCoroutine(GameEndDelay()));
         }
 
+        #endregion
+
+        #region Coroutines
+
+        private IEnumerator GameEndDelay()
+        {
+            yield return new WaitForSeconds(1f);
+            PanelsManager.Instance.ActivateMenuPanel(this);
+        }
         #endregion
     }
 }

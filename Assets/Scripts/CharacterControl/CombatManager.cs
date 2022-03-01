@@ -58,8 +58,12 @@ namespace SwordDefender.CharacterControl
 
         #region Public Methods
 
-        public void Refresh() =>
+        public void Refresh()
+        {
             m_healthPoints = 100;
+            if(isPlayer) GameEventManager.SendPlayerHealthChanged(m_healthPoints);
+            m_animationsManager.SetDeathStatus(false);
+        }
 
         public void Attack()
         {
@@ -102,8 +106,8 @@ namespace SwordDefender.CharacterControl
 
         private void StartDeathAnim()
         {
-            m_animationsManager.StartDeathTrigger(true);
-            m_movementController.StopAllActions(true);
+            m_animationsManager.SetDeathStatus(true);
+            m_movementController.StopAction();
             m_isAttack = false;
         }
 

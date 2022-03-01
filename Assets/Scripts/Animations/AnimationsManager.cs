@@ -10,7 +10,7 @@ namespace SwordDefender.Animations
         private static readonly int RotationSpeed = Animator.StringToHash("RotationSpeed");
         private static readonly int Attack = Animator.StringToHash("Attack");
         private static readonly int IsTurning = Animator.StringToHash("IsTurning");
-        private static readonly int Dead = Animator.StringToHash("Dead");
+        private static readonly int IsDead = Animator.StringToHash("IsDead");
         #endregion
 
         #region Private
@@ -45,8 +45,8 @@ namespace SwordDefender.Animations
             SetTrigger(flag, Attack);
         
 
-        public void StartDeathTrigger(bool flag) =>
-            SetTrigger(flag, Dead);
+        public void SetDeathStatus(bool flag) => 
+            m_animator.SetBool(IsDead, flag);
 
         #endregion
 

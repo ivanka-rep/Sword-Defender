@@ -45,13 +45,18 @@ namespace SwordDefender.Game
 
         #region Private Methods
 
-        private void StartAction() =>
-            StartCoroutine(SpawnRoutine(m_enemiesToSpawn));
-        
+        private void StartAction()
+        {
+            m_enemiesCount = 0;
+            //m_enemiesToSpawn = задавать новое значение с каждой итерацией (система уровней)
+            StartCoroutine(SpawnRoutine());
+        }
+
         private void StopAction()
         {
             StopAllCoroutines();
-            m_enemyCtrlList.ForEach(enemy => {enemy.StopAllActions();});
+            m_enemyCtrlList.ForEach(enemy => 
+                { if(enemy.gameObject.activeSelf) enemy.StopAction(); });
         }
         
         private EnemyController GetEnemyObject()
@@ -70,10 +75,15 @@ namespace SwordDefender.Game
         #endregion
         
         #region Coroutines
-        private IEnumerator SpawnRoutine(int enemiesAmount)
+        private IEnumerator SpawnRoutine()
         {
             if (!isEnabled) yield break;
-            
+            if (m_enemiesCount == m_enemiesToSpawn)
+            {
+                GameEventManager.SendGameProcessEnded();
+                yield break;
+            }
+                
             var enemyCtrl = GetEnemyObject();
             enemyCtrl.transform.position = positionsList[Random.Range(0, positionsList.Count)].position;
             enemyCtrl.transform.LookAt(playerT);
@@ -81,10 +91,9 @@ namespace SwordDefender.Game
             enemyCtrl.StartMoving(playerT);
 
             m_enemiesCount++;
-            if (m_enemiesCount == enemiesAmount) yield break;
             
             yield return new WaitForSeconds(3f);
-            yield return SpawnRoutine(enemiesAmount);
+            yield return SpawnRoutine();
         }
         #endregion
     }

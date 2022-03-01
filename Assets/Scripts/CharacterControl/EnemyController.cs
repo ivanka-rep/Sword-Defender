@@ -14,7 +14,7 @@ namespace SwordDefender.CharacterControl
         private CombatManager m_combatManager = null;
         private AnimationsManager m_animationsManager = null;
         private Transform m_target = null;
-        private bool m_canAttack = true;
+        private bool m_canAttack = false;
         
         private float m_speed = 0;
         private float m_distanceOffset = 0;
@@ -31,6 +31,9 @@ namespace SwordDefender.CharacterControl
             m_rigidbody = gameObject.GetComponent<Rigidbody>();
             m_combatManager = gameObject.GetComponent<CombatManager>();
             m_animationsManager = gameObject.GetComponent<AnimationsManager>();
+            
+            GameEventManager.OnGameProcessStarted.AddListener(() => m_canAttack = true);
+            GameEventManager.OnGameProcessEnded.AddListener(() => m_canAttack = false);
         }
 
         #endregion
@@ -40,16 +43,17 @@ namespace SwordDefender.CharacterControl
         {
             m_target = target;
             m_combatManager.Refresh();
-            m_canAttack = true;
-            
+
             StartCoroutine(MoveRoutine());
         }
         
-        public void StopAllActions(bool isDead = false)
+        public void StopAction()
         {
             m_canAttack = false;
-            if (isDead) StartCoroutine(DeathRoutine());
+            StopAllCoroutines();
+            StartCoroutine(DeathRoutine());
         }
+
         #endregion
         
         #region Coroutines

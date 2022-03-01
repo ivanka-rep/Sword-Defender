@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb84e6bfd7e64c34a843fb7219efb58b, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
-  PlayerStats:
+  PlayerParams:
     damage: 100
     speed: 20
-  EnemyStats:
+  EnemyParams:
     damage: 10
     speed: 20
     distanceToPlayerOffset: 4
     enemiesAmount: 10
+  CombatParams:
+    boxCastMaxDistance: 10
+    checkBoxHalfSize: {x: 3, y: 0.25, z: 2}
