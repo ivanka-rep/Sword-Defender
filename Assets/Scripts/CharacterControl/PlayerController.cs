@@ -2,6 +2,7 @@ using SwordDefender.Animations;
 using SwordDefender.CharacterControl.Interfaces;
 using SwordDefender.Game;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace SwordDefender.CharacterControl
 {

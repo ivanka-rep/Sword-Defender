@@ -3,6 +3,7 @@ using SwordDefender.Animations;
 using SwordDefender.CharacterControl.Interfaces;
 using SwordDefender.Game;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace SwordDefender.CharacterControl
 {
@@ -19,7 +20,7 @@ namespace SwordDefender.CharacterControl
         private float m_speed = 0;
         private float m_distanceOffset = 0;
         #endregion
-        
+
         #region Unity Methods
 
         private void Awake()
@@ -49,9 +50,9 @@ namespace SwordDefender.CharacterControl
         
         public void StopAction()
         {
-            m_canAttack = false;
             StopAllCoroutines();
             StartCoroutine(DeathRoutine());
+            GameEventManager.SendEnemyKilled();
         }
 
         #endregion

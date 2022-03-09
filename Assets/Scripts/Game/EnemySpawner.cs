@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using SwordDefender.CharacterControl;
 using UnityEngine;
 
@@ -22,6 +23,7 @@ namespace SwordDefender.Game
         private Transform m_parent = null;
         private int m_enemiesToSpawn = 0;
         private int m_enemiesCount = 0;
+        private int m_enemiesLeft = 0;
         #endregion
         
         #region Unity Methods
@@ -32,6 +34,7 @@ namespace SwordDefender.Game
             m_enemiesToSpawn = GameManager.Instance.Config.EnemyParams.EnemiesAmount;
             GameEventManager.OnGameProcessStarted.AddListener(StartAction);
             GameEventManager.OnGameProcessEnded.AddListener(StopAction);
+            GameEventManager.OnEnemyKilled.AddListener(OnEnemyKilled);
             
             m_parent = transform;
             for (int i = 0; i < amountToPool; i++)
@@ -47,22 +50,31 @@ namespace SwordDefender.Game
 
         private void StartAction()
         {
-            m_enemiesCount = 0;
             //m_enemiesToSpawn = задавать новое значение с каждой итерацией (система уровней)
+            m_enemiesCount = 0;
+            m_enemiesLeft = m_enemiesToSpawn;
+            
+            foreach (var enemy in m_enemyCtrlList.Where(enemy => enemy.gameObject.activeSelf))
+                enemy.gameObject.SetActive(false);
+            
             StartCoroutine(SpawnRoutine());
         }
 
-        private void StopAction()
-        {
+        private void StopAction() =>
             StopAllCoroutines();
-            m_enemyCtrlList.ForEach(enemy => 
-                { if(enemy.gameObject.activeSelf) enemy.StopAction(); });
+
+        private void OnEnemyKilled()
+        {
+            m_enemiesLeft--;
+            if (m_enemiesLeft == 0)
+                GameEventManager.SendGameProcessEnded();
         }
         
         private EnemyController GetEnemyObject()
         {
             var enemyCtrl = m_enemyCtrlList.Find(enemy => !enemy.gameObject.activeSelf);
-            if (enemyCtrl == null)
+            
+            if (!enemyCtrl)
             {
                 var obj = Instantiate(objectToPool, m_parent);
                 enemyCtrl = obj.GetComponent<EnemyController>();
@@ -77,13 +89,8 @@ namespace SwordDefender.Game
         #region Coroutines
         private IEnumerator SpawnRoutine()
         {
-            if (!isEnabled) yield break;
-            if (m_enemiesCount == m_enemiesToSpawn)
-            {
-                GameEventManager.SendGameProcessEnded();
-                yield break;
-            }
-                
+            if (!isEnabled || m_enemiesCount == m_enemiesToSpawn) yield break;
+            
             var enemyCtrl = GetEnemyObject();
             enemyCtrl.transform.position = positionsList[Random.Range(0, positionsList.Count)].position;
             enemyCtrl.transform.LookAt(playerT);
