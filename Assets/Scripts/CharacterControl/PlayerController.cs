@@ -45,8 +45,11 @@ namespace SwordDefender.CharacterControl
         #endregion
 
         #region Public Methods
-        public void StopAction() =>
+        public void StopAction()
+        {
             GameEventManager.SendGameProcessEnded();
+            GameEventManager.SendPlayerGameOver(false);
+        }
 
         #endregion
         

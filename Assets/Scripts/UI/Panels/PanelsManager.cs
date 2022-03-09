@@ -15,6 +15,8 @@ namespace SwordDefender.UI
         [Header("Panels")]
         [SerializeField] private PanelBase menuPanel = null;
         [SerializeField] private PanelBase gameHudPanel = null;
+        [SerializeField] private PanelBase winPanel = null;
+        [SerializeField] private PanelBase lossPanel = null;
         #endregion
         
         #region Unity Methods
@@ -32,6 +34,12 @@ namespace SwordDefender.UI
         
         public void ActivateGameHudPanel(PanelBase currentPanel) => 
             ChangeActivePanel(currentPanel, gameHudPanel);
+        
+        public void ActivateWinPanel(PanelBase currentPanel) => 
+            ChangeActivePanel(currentPanel, winPanel);
+        
+        public void ActivateLoosePanel(PanelBase currentPanel) => 
+            ChangeActivePanel(currentPanel, lossPanel);
 
         #endregion
 

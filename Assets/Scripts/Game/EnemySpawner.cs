@@ -67,7 +67,10 @@ namespace SwordDefender.Game
         {
             m_enemiesLeft--;
             if (m_enemiesLeft == 0)
+            {
                 GameEventManager.SendGameProcessEnded();
+                GameEventManager.SendPlayerGameOver(true);
+            }
         }
         
         private EnemyController GetEnemyObject()

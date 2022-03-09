@@ -1,10 +1,8 @@
-using System;
 using SwordDefender.Game;
-using UnityEngine;
 
 namespace SwordDefender.UI
 {
-    public class MenuPanel : PanelBase
+    public class MenuPanelManager : PanelBase
     {
         #region Private
         private GameManager m_gameManager = null;

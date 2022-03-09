@@ -26,6 +26,7 @@ namespace SwordDefender.UI
 
             m_canvasGroup.alpha = flag ? 1f : 0f;
             m_canvasGroup.interactable = flag;
+            m_canvasGroup.blocksRaycasts = flag;
         }
     }
 }

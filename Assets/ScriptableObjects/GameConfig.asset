@@ -19,7 +19,7 @@ MonoBehaviour:
     damage: 10
     speed: 20
     distanceToPlayerOffset: 4
-    enemiesAmount: 2
+    enemiesAmount: 5
   CombatParams:
     boxCastMaxDistance: 10
     checkBoxHalfSize: {x: 3, y: 0.25, z: 2}
