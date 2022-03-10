@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &14566855
 RectTransform:
   m_ObjectHideFlags: 0
@@ -290,6 +290,7 @@ GameObject:
   - component: {fileID: 30043154}
   - component: {fileID: 30043153}
   - component: {fileID: 30043152}
+  - component: {fileID: 30043155}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -312,9 +313,9 @@ RectTransform:
   m_Father: {fileID: 1909208814}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 260, y: -50}
   m_SizeDelta: {x: 375, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &30043152
@@ -336,7 +337,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -411,6 +412,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30043150}
   m_CullTransparentMesh: 1
+--- !u!114 &30043155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30043150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f8592f6e60244499365547d3b77e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 30043152}
+  ease: 27
+  scale: 0.95
+  timeUp: 0.1
+  timeDown: 0.1
 --- !u!1 &75243487
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,7 +788,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280831588}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -945,6 +963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 290544299}
   - component: {fileID: 290544300}
+  - component: {fileID: 290544301}
   m_Layer: 5
   m_Name: NextButton
   m_TagString: Untagged
@@ -1029,6 +1048,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &290544301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290544298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f8592f6e60244499365547d3b77e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 290544300}
+  ease: 27
+  scale: 0.95
+  timeUp: 0.1
+  timeDown: 0.1
 --- !u!1 &302910157
 GameObject:
   m_ObjectHideFlags: 0
@@ -2155,7 +2191,7 @@ GameObject:
   - component: {fileID: 883342011}
   - component: {fileID: 883342015}
   - component: {fileID: 883342013}
-  - component: {fileID: 883342016}
+  - component: {fileID: 883342012}
   m_Layer: 5
   m_Name: AttackButton
   m_TagString: Untagged
@@ -2184,6 +2220,23 @@ RectTransform:
   m_AnchoredPosition: {x: -220.00015, y: 0}
   m_SizeDelta: {x: 250, y: -149.19995}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &883342012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883342010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f8592f6e60244499365547d3b77e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 883342013}
+  ease: 27
+  scale: 0.95
+  timeUp: 0.1
+  timeDown: 0.1
 --- !u!114 &883342013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2203,7 +2256,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2248,18 +2301,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883342010}
   m_CullTransparentMesh: 1
---- !u!225 &883342016
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883342010}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &917447315
 GameObject:
   m_ObjectHideFlags: 0
@@ -3247,6 +3288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1343012755}
   - component: {fileID: 1343012756}
+  - component: {fileID: 1343012757}
   m_Layer: 5
   m_Name: NextButton
   m_TagString: Untagged
@@ -3294,7 +3336,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -3331,6 +3373,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1343012757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343012754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f8592f6e60244499365547d3b77e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1343012756}
+  ease: 27
+  scale: 0.95
+  timeUp: 0.1
+  timeDown: 0.1
 --- !u!1 &1357012428
 GameObject:
   m_ObjectHideFlags: 0
@@ -3407,6 +3466,7 @@ GameObject:
   - component: {fileID: 1362132657}
   - component: {fileID: 1362132656}
   - component: {fileID: 1362132655}
+  - component: {fileID: 1362132658}
   m_Layer: 5
   m_Name: ShopButton
   m_TagString: Untagged
@@ -3429,9 +3489,9 @@ RectTransform:
   m_Father: {fileID: 1909208814}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 260, y: -200}
   m_SizeDelta: {x: 375, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1362132655
@@ -3453,7 +3513,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -3516,6 +3576,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362132653}
   m_CullTransparentMesh: 1
+--- !u!114 &1362132658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362132653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f8592f6e60244499365547d3b77e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1362132655}
+  ease: 27
+  scale: 0.95
+  timeUp: 0.1
+  timeDown: 0.1
 --- !u!1 &1388490513
 GameObject:
   m_ObjectHideFlags: 0
@@ -4559,7 +4636,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1909208815
 MonoBehaviour:
@@ -5019,6 +5096,7 @@ GameObject:
   - component: {fileID: 2051620380}
   - component: {fileID: 2051620379}
   - component: {fileID: 2051620378}
+  - component: {fileID: 2051620381}
   m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
@@ -5041,9 +5119,9 @@ RectTransform:
   m_Father: {fileID: 1909208814}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 260, y: -350}
   m_SizeDelta: {x: 375, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2051620378
@@ -5065,7 +5143,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -5128,6 +5206,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051620376}
   m_CullTransparentMesh: 1
+--- !u!114 &2051620381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051620376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f8592f6e60244499365547d3b77e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 2051620378}
+  ease: 27
+  scale: 0.95
+  timeUp: 0.1
+  timeDown: 0.1
 --- !u!1 &2079703132
 GameObject:
   m_ObjectHideFlags: 0
@@ -5321,6 +5416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2141131927}
   - component: {fileID: 2141131928}
+  - component: {fileID: 2141131929}
   m_Layer: 5
   m_Name: TryAgainButton
   m_TagString: Untagged
@@ -5405,6 +5501,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2141131929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141131926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f8592f6e60244499365547d3b77e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 2141131928}
+  ease: 27
+  scale: 0.95
+  timeUp: 0.1
+  timeDown: 0.1
 --- !u!1 &2141704691
 GameObject:
   m_ObjectHideFlags: 0
