@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace SwordDefender.UI
 {
@@ -13,6 +14,7 @@ namespace SwordDefender.UI
         [SerializeField] private float transitionTime = 1f;
         
         [Header("Panels")]
+        [SerializeField] private Image background = null;
         [SerializeField] private PanelBase menuPanel = null;
         [SerializeField] private PanelBase gameHudPanel = null;
         [SerializeField] private PanelBase winPanel = null;
@@ -30,7 +32,7 @@ namespace SwordDefender.UI
         #region Public Methods
 
         public void ActivateMenuPanel(PanelBase currentPanel) => 
-            ChangeActivePanel(currentPanel, menuPanel);
+            ChangeActivePanel(currentPanel, menuPanel, true);
         
         public void ActivateGameHudPanel(PanelBase currentPanel) => 
             ChangeActivePanel(currentPanel, gameHudPanel);
@@ -45,8 +47,10 @@ namespace SwordDefender.UI
 
         #region Private Methods
 
-        private void ChangeActivePanel(PanelBase currentPanel, PanelBase targetPanel)
+        private void ChangeActivePanel(PanelBase currentPanel, PanelBase targetPanel, bool enableBackground = false)
         {
+            background.color = enableBackground ? Color.white : Color.clear;
+            
             currentPanel.SetActive(false, transitionTime);
             targetPanel.SetActive(true, transitionTime);
         }
