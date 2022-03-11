@@ -21,8 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0416cd47-dd86-46cd-b1c2-b37b36df28dd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/PanelsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/PanelsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/stickman_sword.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/stickman_sword.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FX/ParticlesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FX/ParticlesManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +34,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Animations/AnimationsManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/PanelsManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Animations/ClickScale.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FX/ParticlesManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -44,6 +46,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Animations/OnClickAnim.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Animations/ClickScale.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/PanelsManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FX/ParticlesManager.cs" />
       </list>
     </option>
   </component>
@@ -83,7 +86,8 @@
       <option name="presentableId" value="Default" />
       <updated>1645109986315</updated>
       <workItem from="1645109992383" duration="3000" />
-      <workItem from="1646924189115" duration="2688000" />
+      <workItem from="1646924189115" duration="3330000" />
+      <workItem from="1647005295136" duration="1069000" />
     </task>
     <servers />
   </component>
@@ -102,6 +106,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

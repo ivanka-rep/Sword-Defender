@@ -7,6 +7,10 @@ public class ParticlesManager : MonoBehaviour
   [SerializeField] private List<ParticleSystem> attackParticlesList = null;
   #endregion
 
+  #region Private
+  private readonly Vector3 m_height = new Vector3(0, 5, 0);
+  #endregion  
+  
   #region Public
 
   public void PlayAttackParticle()
@@ -28,7 +32,7 @@ public class ParticlesManager : MonoBehaviour
   {
     var rot = t.rotation.eulerAngles;
     t.rotation = Quaternion.Euler(rot.x, transform.rotation.eulerAngles.y, rot.z);
-    t.transform.position = transform.forward * 2 + new Vector3(0, 5, 0);
+    t.transform.position = transform.forward * 2 + m_height;
   }
   #endregion
 }

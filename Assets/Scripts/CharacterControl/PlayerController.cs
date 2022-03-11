@@ -2,10 +2,10 @@ using SwordDefender.Animations;
 using SwordDefender.CharacterControl.Interfaces;
 using SwordDefender.Game;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace SwordDefender.CharacterControl
 {
+    [SelectionBase]
     public class PlayerController : MonoBehaviour, IMovementController
     {
         #region Serialized Fields
