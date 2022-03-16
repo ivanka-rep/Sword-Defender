@@ -16,6 +16,7 @@ namespace SwordDefender.UI
         [Header("Panels")]
         [SerializeField] private Image background = null;
         [SerializeField] private PanelBase menuPanel = null;
+        [SerializeField] private PanelBase settingsPanel = null;
         [SerializeField] private PanelBase gameHudPanel = null;
         [SerializeField] private PanelBase winPanel = null;
         [SerializeField] private PanelBase lossPanel = null;
@@ -33,6 +34,9 @@ namespace SwordDefender.UI
 
         public void ActivateMenuPanel(PanelBase currentPanel) => 
             ChangeActivePanel(currentPanel, menuPanel, true);
+
+        public void ActivateSettingsPanel(PanelBase currentPanel) =>
+            ChangeActivePanel(currentPanel, settingsPanel, true);
         
         public void ActivateGameHudPanel(PanelBase currentPanel) => 
             ChangeActivePanel(currentPanel, gameHudPanel);

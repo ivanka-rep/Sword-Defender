@@ -24,7 +24,10 @@ namespace SwordDefender.UI
             PanelsManager.Instance.ActivateGameHudPanel(this);
             GameManager.Instance.StartAction();
         }
-        
+
+        public void OnSettingsButtonPressed() =>
+            PanelsManager.Instance.ActivateSettingsPanel(this);
+
         #endregion
     }
 }

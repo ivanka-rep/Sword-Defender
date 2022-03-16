@@ -9,6 +9,7 @@ namespace SwordDefender.Game
         public static readonly UnityEvent<bool> OnPlayerGameOver = new UnityEvent<bool>();
         public static readonly UnityEvent<int> OnPlayerHealthChanged = new UnityEvent<int>();
         public static readonly UnityEvent OnEnemyKilled = new UnityEvent();
+        public static readonly UnityEvent<SettingType> OnGameSettingsChanged = new UnityEvent<SettingType>();
         
         public static void SendGameProcessStarted() =>
             OnGameProcessStarted.Invoke();
@@ -24,5 +25,19 @@ namespace SwordDefender.Game
 
         public static void SendEnemyKilled() =>
             OnEnemyKilled.Invoke();
+
+        public static void SendGameSettingsChanged(SettingType settingType = SettingType.Default) =>
+            OnGameSettingsChanged.Invoke(settingType);
+        
+    }
+
+    public enum SettingType
+    {
+        Default,
+        MasterVolume,
+        MusicVolume,
+        MasterMute,
+        MusicMute,
+        Sensitivity,
     }
 }

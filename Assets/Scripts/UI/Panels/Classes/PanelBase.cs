@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace SwordDefender.UI
 {
@@ -7,14 +8,18 @@ namespace SwordDefender.UI
     public abstract class PanelBase : MonoBehaviour
     {
         private CanvasGroup m_canvasGroup = null;
+        protected UnityEvent m_onPanelActivated = new UnityEvent();
         
         private void Start()
         {
             m_canvasGroup = gameObject.GetComponent<CanvasGroup>();
         }
         
-        public void SetActive(bool flag, float transitionTime) =>
+        public void SetActive(bool flag, float transitionTime)
+        {
             StartCoroutine(SetActiveRoutine(flag, transitionTime));
+            m_onPanelActivated.Invoke();
+        }
 
         private IEnumerator SetActiveRoutine(bool flag, float transitionTime)
         {

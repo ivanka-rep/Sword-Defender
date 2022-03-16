@@ -20,9 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0416cd47-dd86-46cd-b1c2-b37b36df28dd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/stickman_sword.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/stickman_sword.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FX/ParticlesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FX/ParticlesManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameEventManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameEventManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Animations.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Animations/ClickScale.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Animations/ClickScale.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Classes/PanelBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Classes/PanelBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/MenuPanelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/MenuPanelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/PanelsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/PanelsManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,9 +41,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Features/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Features/ClickScale.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Features/ToggleSwitch.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CharacterControl/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/SettingsPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LossPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Animations/AnimationsManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/WinPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/Classes/PanelBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameEventManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/GameHudPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/PanelsManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Animations/ClickScale.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Packages/CrystalFramework/Utility/SafeArea.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/MenuPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FX/ParticlesManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -45,8 +63,19 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/OnClickAnim.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Animations/OnClickAnim.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Animations/ClickScale.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/PanelsManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FX/ParticlesManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CharacterControl/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Packages/CrystalFramework/Utility/SafeArea.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameEventManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Classes/PanelBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Features/ToggleSwitch.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Feautures/ClickScale.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Feautures/ToggleSwitch.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Features/ClickScale.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/SettingsPanelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/PanelsManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/MenuPanelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Features/ToggleSwitch.cs" />
       </list>
     </option>
   </component>
@@ -87,7 +116,9 @@
       <updated>1645109986315</updated>
       <workItem from="1645109992383" duration="3000" />
       <workItem from="1646924189115" duration="3330000" />
-      <workItem from="1647005295136" duration="1069000" />
+      <workItem from="1647005295136" duration="3787000" />
+      <workItem from="1647444351254" duration="4234000" />
+      <workItem from="1647449549430" duration="4838000" />
     </task>
     <servers />
   </component>
@@ -110,5 +141,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1730" y="294" width="668" height="530" key="find.popup" timestamp="1647453804590">
+      <screen x="0" y="0" width="2752" height="1112" />
+    </state>
+    <state x="1730" y="294" width="668" height="530" key="find.popup/0.0.2752.1112@0.0.2752.1112" timestamp="1647453804590" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1647448311903">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1647448311903" />
   </component>
 </project>
