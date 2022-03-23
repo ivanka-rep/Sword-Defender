@@ -51,7 +51,7 @@ namespace SwordDefender.CharacterControl
         public void StopAction()
         {
             StopAllCoroutines();
-            StartCoroutine(DeathRoutine());
+            StartCoroutine(DisableObjectRoutine());
             GameEventManager.SendEnemyKilled();
         }
 
@@ -91,8 +91,10 @@ namespace SwordDefender.CharacterControl
             }
         }
 
-        private IEnumerator DeathRoutine()
+        private IEnumerator DisableObjectRoutine()
         {
+            m_rigidbody.velocity = Vector3.zero;
+            
             yield return new WaitForSeconds(2f);
             gameObject.SetActive(false);
         }
