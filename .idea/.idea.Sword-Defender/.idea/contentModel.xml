@@ -90,6 +90,7 @@
             <e p="PlayerController.cs" t="Include" />
           </e>
           <e p="Features" t="Include">
+            <e p="CameraController.cs" t="Include" />
             <e p="GameTagExtension" t="Include">
               <e p="GameTag.cs" t="Include" />
               <e p="GameTagReference.cs" t="Include" />
@@ -103,6 +104,9 @@
             <e p="EnemySpawner.cs" t="Include" />
             <e p="GameEventManager.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
+          </e>
+          <e p="TestScripts" t="Include">
+            <e p="TestSceneManager.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
             <e p="Features" t="Include">

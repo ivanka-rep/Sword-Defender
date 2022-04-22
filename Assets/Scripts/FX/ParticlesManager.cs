@@ -32,7 +32,7 @@ public class ParticlesManager : MonoBehaviour
   {
     var rot = t.rotation.eulerAngles;
     t.rotation = Quaternion.Euler(rot.x, transform.rotation.eulerAngles.y, rot.z);
-    t.transform.position = transform.forward * 2 + m_height;
+    t.transform.position = transform.forward * 2 + m_height + transform.position;
   }
   #endregion
 }

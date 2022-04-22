@@ -15,6 +15,7 @@ namespace SwordDefender.Game
 
         #region Serialized Fields
         [SerializeField] private GameConfig config = null;
+        [SerializeField] private bool isTest = false;
         #endregion
         
         #region Unity Methods
@@ -26,7 +27,7 @@ namespace SwordDefender.Game
             DontDestroyOnLoad(Instance);
 
             GameEventManager.OnGameProcessEnded.AddListener(() => IsGameActive = false);
-            SceneManager.LoadScene("Main");
+            SceneManager.LoadScene(isTest ? "TestScene" : "Main");
         }
         #endregion
 
