@@ -32,7 +32,7 @@ namespace SwordDefender.UI
             // SLIDERS SETTINGS
             sensitivity.onValueChanged.AddListener(value =>
             {
-                PlayerPrefs.SetFloat("SENSITIVITY", value);
+                PlayerPrefs.SetFloat("SENSITIVITY", value < 0.1f ? 0.1f : value);
                 GameEventManager.SendGameSettingsChanged(SettingType.Sensitivity);
             });
             
@@ -80,7 +80,7 @@ namespace SwordDefender.UI
         #region Private Methods
         private void Refresh()
         {
-            sensitivity.value = PlayerPrefs.GetFloat("SENSITIVITY", 0.75f);
+            sensitivity.value = PlayerPrefs.GetFloat("SENSITIVITY", 0.5f);
             musicVolume.value = PlayerPrefs.GetFloat("MUSIC_VOLUME", 0.75f);
             masterVolume.value = PlayerPrefs.GetFloat("MASTER_VOLUME", 0.75f);
             

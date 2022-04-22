@@ -17,7 +17,7 @@ namespace SwordDefender.CharacterControl
         private AnimationsManager m_animationsManager = null;
         private CombatManager m_combatManager = null;
         private float m_speed = 0;
-        private float m_sensitivity = 0.5f; //Задавать как параметр.
+        [Min(0.1f)] private float m_sensitivity = 0.5f;
         private bool m_canControl = false;
         #endregion
 
@@ -29,6 +29,7 @@ namespace SwordDefender.CharacterControl
             m_animationsManager = gameObject.GetComponent<AnimationsManager>();
             m_combatManager = gameObject.GetComponent<CombatManager>();
             m_speed = GameManager.Instance.Config.PlayerParams.Speed;
+            m_sensitivity = PlayerPrefs.GetFloat("SENSITIVITY", 0.5f);
             
             GameEventManager.OnGameProcessStarted.AddListener(StartAction);
             GameEventManager.OnGameProcessEnded.AddListener(() => m_canControl = false);
