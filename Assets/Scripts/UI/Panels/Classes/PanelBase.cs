@@ -8,7 +8,7 @@ namespace SwordDefender.UI
     public abstract class PanelBase : MonoBehaviour
     {
         private CanvasGroup m_canvasGroup = null;
-        protected UnityEvent m_onPanelActivated = new UnityEvent();
+        protected readonly UnityEvent<bool> m_onPanelActivated = new UnityEvent<bool>();
         
         private void Start()
         {
@@ -18,7 +18,7 @@ namespace SwordDefender.UI
         public void SetActive(bool flag, float transitionTime)
         {
             StartCoroutine(SetActiveRoutine(flag, transitionTime));
-            m_onPanelActivated.Invoke();
+            m_onPanelActivated.Invoke(flag);
         }
 
         private IEnumerator SetActiveRoutine(bool flag, float transitionTime)

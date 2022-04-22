@@ -1,3 +1,4 @@
+using SwordDefender.Audio;
 using SwordDefender.Game;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,9 +18,17 @@ namespace SwordDefender.UI
         [SerializeField] private Toggle masterMuteToggle;
         #endregion
 
+        #region Private
+
+        private AudioManager m_audioManager = null;
+
+        #endregion
+        
         #region Unity Methods
         private void Awake()
         {
+            m_audioManager = AudioManager.Instance;
+            
             // SLIDERS SETTINGS
             sensitivity.onValueChanged.AddListener(value =>
             {
@@ -31,30 +40,33 @@ namespace SwordDefender.UI
             {
                 PlayerPrefs.SetFloat("MASTER_VOLUME", value);
                 GameEventManager.SendGameSettingsChanged(SettingType.MasterVolume);
+                m_audioManager.Refresh();
             });
 
             musicVolume.onValueChanged.AddListener(value =>
             {
                 PlayerPrefs.SetFloat("MUSIC_VOLUME", value);
                 GameEventManager.SendGameSettingsChanged(SettingType.MusicVolume);
+                m_audioManager.Refresh();
             });
 
             // TOGGLES SETTINGS
             musicMuteToggle.onValueChanged.AddListener(value =>
             {
-                PlayerPrefs.SetInt("MUSIC_MUTE", value ? 1 : 0 );
+                PlayerPrefs.SetInt("MUSIC_MUTE", value ? 0 : 1 );
                 GameEventManager.SendGameSettingsChanged(SettingType.MusicMute);
-                
+                m_audioManager.Refresh();
             });
             
             masterMuteToggle.onValueChanged.AddListener(value =>
             {
-                PlayerPrefs.SetInt("MASTER_MUTE", value ? 1 : 0 );
+                PlayerPrefs.SetInt("MASTER_MUTE", value ? 0 : 1 );
                 GameEventManager.SendGameSettingsChanged(SettingType.MasterMute);
+                m_audioManager.Refresh();
             });
             
             //Event from base class
-            m_onPanelActivated.AddListener(Refresh);
+            m_onPanelActivated.AddListener(isActivated => Refresh());
         }
         #endregion
 
@@ -72,8 +84,10 @@ namespace SwordDefender.UI
             musicVolume.value = PlayerPrefs.GetFloat("MUSIC_VOLUME", 0.75f);
             masterVolume.value = PlayerPrefs.GetFloat("MASTER_VOLUME", 0.75f);
             
-            musicMuteToggle.isOn = PlayerPrefs.GetInt("MUSIC_MUTE", 1) == 1;
-            masterMuteToggle.isOn = PlayerPrefs.GetInt("MASTER_MUTE", 1) == 1;
+            musicMuteToggle.isOn = PlayerPrefs.GetInt("MUSIC_MUTE", 0) == 0;
+            masterMuteToggle.isOn = PlayerPrefs.GetInt("MASTER_MUTE", 0) == 0;
+            
+            m_audioManager.Refresh();
         }
         #endregion
     }

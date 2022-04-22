@@ -73,21 +73,24 @@
           <e p="Animations" t="Include">
             <e p="AnimationsManager.cs" t="Include" />
           </e>
+          <e p="Audio" t="Include">
+            <e p="AudioManager.cs" t="Include" />
+          </e>
           <e p="CharacterControl" t="Include">
             <e p="CombatManager.cs" t="Include" />
-            <e p="Config" t="Include">
-              <e p="Classes" t="Include">
-                <e p="CombatParams.cs" t="Include" />
-                <e p="EnemyParams.cs" t="Include" />
-                <e p="PlayerParams.cs" t="Include" />
-              </e>
-              <e p="GameConfig.cs" t="Include" />
-            </e>
             <e p="EnemyController.cs" t="Include" />
             <e p="Interfaces" t="Include">
               <e p="IMovementController.cs" t="Include" />
             </e>
             <e p="PlayerController.cs" t="Include" />
+          </e>
+          <e p="Config" t="Include">
+            <e p="Classes" t="Include">
+              <e p="CombatParams.cs" t="Include" />
+              <e p="EnemyParams.cs" t="Include" />
+              <e p="PlayerParams.cs" t="Include" />
+            </e>
+            <e p="GameConfig.cs" t="Include" />
           </e>
           <e p="Features" t="Include">
             <e p="CameraController.cs" t="Include" />
