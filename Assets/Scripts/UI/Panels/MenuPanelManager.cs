@@ -1,6 +1,6 @@
 using SwordDefender.Game;
 
-namespace SwordDefender.UI
+namespace SwordDefender.UI.Panels
 {
     public class MenuPanelManager : PanelBase
     {

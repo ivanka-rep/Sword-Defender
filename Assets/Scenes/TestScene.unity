@@ -1537,9 +1537,6 @@ MonoBehaviour:
   height: 8
   smoothness: 0.15
   rotateCamera: 1
-  rotateSpeed: 10
-  minAngle: -45
-  maxAngle: -10
 --- !u!81 &2036395213
 AudioListener:
   m_ObjectHideFlags: 0

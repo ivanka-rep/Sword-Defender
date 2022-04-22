@@ -20,8 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0416cd47-dd86-46cd-b1c2-b37b36df28dd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterControl/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterControl/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Classes/PanelBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Classes/PanelBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/GameHudPanelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/GameHudPanelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LossPanelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LossPanelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/MenuPanelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/MenuPanelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/PanelsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/PanelsManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/SettingsPanelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/SettingsPanelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/WinPanelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/WinPanelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +58,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Features/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CharacterControl/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/SettingsPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/ShopPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CharacterControl/EnemyController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/EnemySpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/ToggleGroup.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/WinPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/GameHudPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Audio/AudioManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -67,8 +80,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Feautures/ClickScale.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Feautures/ToggleSwitch.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Features/ClickScale.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/PanelsManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/MenuPanelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Features/ToggleSwitch.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CharacterControl/EnemyController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/CameraController.cs" />
@@ -77,11 +88,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Features/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FX/ParticlesManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/AudioManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Classes/PanelBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ScriptableObjects/AudioSourceObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CharacterControl/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/MenuPanelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/WinPanelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LossPanelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/PanelsManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/SettingsPanelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Classes/PanelBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/GameHudPanelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/ShopPanelManager.cs" />
       </list>
     </option>
   </component>
@@ -126,7 +143,7 @@
       <workItem from="1647444351254" duration="4234000" />
       <workItem from="1647449549430" duration="5471000" />
       <workItem from="1648053090804" duration="7591000" />
-      <workItem from="1650625736940" duration="8482000" />
+      <workItem from="1650625736940" duration="14041000" />
     </task>
     <servers />
   </component>

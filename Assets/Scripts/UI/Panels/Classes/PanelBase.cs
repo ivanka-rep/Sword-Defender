@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace SwordDefender.UI
+namespace SwordDefender.UI.Panels
 {
     [RequireComponent(typeof(CanvasGroup))]
     public abstract class PanelBase : MonoBehaviour

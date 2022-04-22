@@ -1,5 +1,5 @@
 
-namespace SwordDefender.UI
+namespace SwordDefender.UI.Panels
 {
     public class WinPanelManager : PanelBase
     {

@@ -3,7 +3,7 @@ using SwordDefender.Game;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace SwordDefender.UI
+namespace SwordDefender.UI.Panels
 {
     public class GameHudPanelManager : PanelBase
     {
