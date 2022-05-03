@@ -27,6 +27,9 @@ namespace SwordDefender.UI.Panels
 
         public void OnSettingsButtonPressed() =>
             PanelsManager.Instance.ActivateSettingsPanel(this);
+        
+        public void OnShopButtonPressed() => 
+            PanelsManager.Instance.ActivateShopPanel(this);
 
         #endregion
     }

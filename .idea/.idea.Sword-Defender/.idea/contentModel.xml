@@ -125,7 +125,12 @@
               <e p="MenuPanelManager.cs" t="Include" />
               <e p="PanelsManager.cs" t="Include" />
               <e p="SettingsPanelManager.cs" t="Include" />
-              <e p="ShopPanelManager.cs" t="Include" />
+              <e p="ShopPanel" t="Include">
+                <e p="Items" t="Include">
+                  <e p="ShopItem.cs" t="Include" />
+                </e>
+                <e p="ShopPanelManager.cs" t="Include" />
+              </e>
               <e p="WinPanelManager.cs" t="Include" />
             </e>
           </e>

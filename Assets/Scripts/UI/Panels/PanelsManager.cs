@@ -17,6 +17,7 @@ namespace SwordDefender.UI.Panels
         [SerializeField] private Image background = null;
         [SerializeField] private PanelBase menuPanel = null;
         [SerializeField] private PanelBase settingsPanel = null;
+        [SerializeField] private PanelBase shopPanel = null;
         [SerializeField] private PanelBase gameHudPanel = null;
         [SerializeField] private PanelBase winPanel = null;
         [SerializeField] private PanelBase lossPanel = null;
@@ -38,6 +39,9 @@ namespace SwordDefender.UI.Panels
         public void ActivateSettingsPanel(PanelBase currentPanel) =>
             ChangeActivePanel(currentPanel, settingsPanel, true);
         
+        public void ActivateShopPanel(PanelBase currentPanel) =>
+            ChangeActivePanel(currentPanel, shopPanel, true);
+
         public void ActivateGameHudPanel(PanelBase currentPanel) => 
             ChangeActivePanel(currentPanel, gameHudPanel);
         
