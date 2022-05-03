@@ -19,5 +19,13 @@ namespace SwordDefender.UI.Panels
         }
 
         #endregion
+
+        #region Public Methods
+
+        public void OnBackButtonClick() =>
+            PanelsManager.Instance.ActivateMenuPanel(this);
+        
+
+        #endregion
     }
 }
