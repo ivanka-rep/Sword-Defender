@@ -92,6 +92,22 @@
             </e>
             <e p="GameConfig.cs" t="Include" />
           </e>
+          <e p="Data" t="Include">
+            <e p="PlayerData.cs" t="Include" />
+            <e p="ShopItemsData" t="Include">
+              <e p="Interfaces" t="Include">
+                <e p="IProduct.cs" t="Include" />
+                <e p="ISkinProduct.cs" t="Include" />
+                <e p="IWeaponProduct.cs" t="Include" />
+              </e>
+              <e p="ScriptableObjects" t="Include">
+                <e p="SkinsDataObject.cs" t="Include" />
+                <e p="WeaponsDataObject.cs" t="Include" />
+              </e>
+              <e p="SkinProductData.cs" t="Include" />
+              <e p="WeaponProductData.cs" t="Include" />
+            </e>
+          </e>
           <e p="Features" t="Include">
             <e p="CameraController.cs" t="Include" />
             <e p="GameTagExtension" t="Include">

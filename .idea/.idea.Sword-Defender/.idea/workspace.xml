@@ -22,16 +22,9 @@
     <list default="true" id="0416cd47-dd86-46cd-b1c2-b37b36df28dd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/MenuPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/MenuPanel.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Shop/Items/SkinItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Shop/Items/SkinItem.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Shop/Items/WeaponItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Shop/Items/WeaponItem.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Shop/ShopPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Shop/ShopPanel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/MenuPanelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/MenuPanelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/PanelsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/PanelsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/ShopPanelManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/ShopPanelManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,22 +41,33 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Animations/AnimationsManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/Classes/PanelBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameEventManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Packages/Epic Toon FX/Demo/Scripts/ETFXButtonScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/WeaponProductData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/PanelsManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/WeaponsDataObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FX/ParticlesManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/PlayerData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Features/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Features/ClickScale.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Features/GameTagExtension/GameTag.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Features/ToggleSwitch.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Features/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CharacterControl/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/SettingsPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CharacterControl/EnemyController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics2D.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/EnemySpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/SkinProductData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IWeaponProduct.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/ToggleGroup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IProduct.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/SkinsDataObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/WinPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/ShopPanel/Items/ShopItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/GameHudPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Audio/AudioManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/ISkinProduct.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/CrystalFramework/Utility/SafeArea.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/MenuPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/ShopPanel/ShopPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -101,6 +105,20 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/PanelsManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/MenuPanelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/ShopPanel/ShopPanelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/Classes/ItemData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/Classes/ItemDataObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IProductItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/PlayerData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IWeaponItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/ISkinItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IWeaponProduct.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IProduct.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/SkinProductData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/ItemDataObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/ISkinProduct.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/WeaponProductData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/WeaponsDataObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/SkinsDataObject.cs" />
       </list>
     </option>
   </component>
@@ -147,7 +165,8 @@
       <workItem from="1648053090804" duration="7591000" />
       <workItem from="1650625736940" duration="14044000" />
       <workItem from="1651499259770" duration="1231000" />
-      <workItem from="1651579052897" duration="4380000" />
+      <workItem from="1651579052897" duration="9521000" />
+      <workItem from="1651839423082" duration="2250000" />
     </task>
     <servers />
   </component>
@@ -172,10 +191,14 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1730" y="294" width="668" height="530" key="find.popup" timestamp="1651579985920">
+    <state x="1893" y="241" key="RiderGenerateDialog" timestamp="1651841291728">
       <screen x="0" y="0" width="2752" height="1112" />
     </state>
-    <state x="1730" y="294" width="668" height="530" key="find.popup/0.0.2752.1112@0.0.2752.1112" timestamp="1651579985920" />
+    <state x="1893" y="241" key="RiderGenerateDialog/0.0.2752.1112@0.0.2752.1112" timestamp="1651841291728" />
+    <state x="1730" y="294" width="668" height="530" key="find.popup" timestamp="1651586899832">
+      <screen x="0" y="0" width="2752" height="1112" />
+    </state>
+    <state x="1730" y="294" width="668" height="530" key="find.popup/0.0.2752.1112@0.0.2752.1112" timestamp="1651586899832" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1647448311903">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
