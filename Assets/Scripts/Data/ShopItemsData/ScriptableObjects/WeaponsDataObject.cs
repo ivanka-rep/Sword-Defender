@@ -13,13 +13,13 @@ namespace Data.ShopItemsData
        public List<WeaponProductData> GetAllWeaponsList()
        {
            var dataList = weaponProductData.Select(serializedData => new WeaponProductData()
-               {
-                   Name = serializedData.name,
-                   Price = serializedData.price,
-                   IconId = serializedData.iconId,
-                   Damage = serializedData.damage,
-                   Weight = serializedData.weight
-               }).ToList();
+           {
+               Name = serializedData.name,
+               Price = serializedData.price,
+               IconId = serializedData.iconId,
+               Damage = serializedData.damage,
+               Weight = serializedData.weight
+           }).ToList();
            
            return dataList;
        }

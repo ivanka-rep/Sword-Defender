@@ -19,7 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0416cd47-dd86-46cd-b1c2-b37b36df28dd" name="Default Changelist" comment="" />
+    <list default="true" id="0416cd47-dd86-46cd-b1c2-b37b36df28dd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/WeaponsDataObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/WeaponsDataObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/WeaponProductData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/WeaponProductData.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,10 +114,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/SkinProductData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/ItemDataObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/ISkinProduct.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/WeaponProductData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/WeaponsDataObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/SkinsDataObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/ScriptableObjects/IconsDataObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/WeaponsDataObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/WeaponProductData.cs" />
       </list>
     </option>
   </component>
@@ -162,7 +165,7 @@
       <workItem from="1650625736940" duration="14044000" />
       <workItem from="1651499259770" duration="1231000" />
       <workItem from="1651579052897" duration="9521000" />
-      <workItem from="1651839423082" duration="2777000" />
+      <workItem from="1651839423082" duration="3351000" />
     </task>
     <servers />
   </component>
