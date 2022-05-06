@@ -94,6 +94,9 @@
           </e>
           <e p="Data" t="Include">
             <e p="PlayerData.cs" t="Include" />
+            <e p="ScriptableObjects" t="Include">
+              <e p="IconsDataObject.cs" t="Include" />
+            </e>
             <e p="ShopItemsData" t="Include">
               <e p="Interfaces" t="Include">
                 <e p="IProduct.cs" t="Include" />
