@@ -14,6 +14,7 @@ namespace Data.ShopItemsData
         {
             var dataList = weaponProductData.Select(serializedData => new SkinProductData()
             {
+                ProductId = serializedData.productId,
                 Name = serializedData.name,
                 Price = serializedData.price,
                 IconId = serializedData.iconId,
@@ -27,6 +28,7 @@ namespace Data.ShopItemsData
 
     [Serializable] public class SkinProductDataSerializable
     {
+        public string productId;
         public string name;
         public int price;
         public string iconId;

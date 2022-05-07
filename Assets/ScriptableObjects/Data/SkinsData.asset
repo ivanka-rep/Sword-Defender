@@ -12,4 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aca660b8e889ec44862257a6f05f6f5, type: 3}
   m_Name: SkinsData
   m_EditorClassIdentifier: 
-  weaponProductData: []
+  weaponProductData:
+  - name: stickman
+    price: 100
+    iconId: 0
+    health: 100
+    attackSpeed: 100
+  - name: stickman
+    price: 100
+    iconId: 0
+    health: 100
+    attackSpeed: 100

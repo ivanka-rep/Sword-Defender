@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7a334fa435d5a489965e7468618269, type: 3}
   m_Name: IconsData
   m_EditorClassIdentifier: 
-  weaponIcons: []
-  skinIcons: []
   commonIcons: []
+  weaponIcons:
+  - {fileID: 21300000, guid: 426ce642b1da66243a79d690167db6b9, type: 3}
+  skinIcons:
+  - {fileID: 21300000, guid: daeb1f2878ce2d54695cf5eead343878, type: 3}

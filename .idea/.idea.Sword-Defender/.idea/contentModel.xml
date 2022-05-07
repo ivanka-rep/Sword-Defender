@@ -93,6 +93,10 @@
             <e p="GameConfig.cs" t="Include" />
           </e>
           <e p="Data" t="Include">
+            <e p="Extensions" t="Include">
+              <e p="InventoryDataExtensions.cs" t="Include" />
+            </e>
+            <e p="InventoryData.cs" t="Include" />
             <e p="PlayerData.cs" t="Include" />
             <e p="ScriptableObjects" t="Include">
               <e p="IconsDataObject.cs" t="Include" />
