@@ -96,8 +96,8 @@
             <e p="Extensions" t="Include">
               <e p="InventoryDataExtensions.cs" t="Include" />
             </e>
+            <e p="GameDataManager.cs" t="Include" />
             <e p="InventoryData.cs" t="Include" />
-            <e p="PlayerData.cs" t="Include" />
             <e p="ScriptableObjects" t="Include">
               <e p="IconsDataObject.cs" t="Include" />
             </e>
@@ -114,6 +114,8 @@
               <e p="SkinProductData.cs" t="Include" />
               <e p="WeaponProductData.cs" t="Include" />
             </e>
+            <e p="UserData.cs" t="Include" />
+            <e p="UserDataEventManager.cs" t="Include" />
           </e>
           <e p="Features" t="Include">
             <e p="CameraController.cs" t="Include" />

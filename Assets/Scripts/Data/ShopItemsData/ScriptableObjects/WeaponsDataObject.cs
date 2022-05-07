@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Data.ShopItemsData
+namespace SwordDefender.Data.ShopItemsData
 {
     [CreateAssetMenu(fileName = "WeaponsData", menuName = "ScriptableObjects/WeaponsData", order = 1)]
     public class WeaponsDataObject : ScriptableObject
@@ -15,6 +15,7 @@ namespace Data.ShopItemsData
            var dataList = weaponProductData.Select(serializedData => new WeaponProductData()
            {
                ProductId = serializedData.productId,
+               ProductType = ProductType.Weapon,
                Name = serializedData.name,
                Price = serializedData.price,
                IconId = serializedData.iconId,

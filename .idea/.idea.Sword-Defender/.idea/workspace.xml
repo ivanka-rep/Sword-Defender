@@ -22,16 +22,19 @@
     <list default="true" id="0416cd47-dd86-46cd-b1c2-b37b36df28dd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Data/IconsData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Data/IconsData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Data/SkinsData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Data/SkinsData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Data/WeaponsData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Data/WeaponsData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Extensions/InventoryDataExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Extensions/InventoryDataExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/InventoryData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/InventoryData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/PlayerData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ScriptableObjects/IconsDataObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ScriptableObjects/IconsDataObject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IProduct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IProduct.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/ISkinProduct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/ISkinProduct.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IWeaponProduct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IWeaponProduct.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/SkinsDataObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/SkinsDataObject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/WeaponsDataObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/WeaponsDataObject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/SkinProductData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/SkinProductData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/WeaponProductData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/WeaponProductData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameEventManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameEventManager.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,13 +46,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Events/GameEventManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestScripts/TestSceneManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Config/GameConfig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/ScriptableObjects/IconsDataObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LossPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Animations/AnimationsManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/Classes/PanelBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameEventManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/Epic Toon FX/Demo/Scripts/ETFXButtonScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/WeaponProductData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/PanelsManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -71,6 +74,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/SkinProductData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IWeaponProduct.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/ToggleGroup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/GameDataManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IProduct.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/SkinsDataObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/WinPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -119,20 +123,22 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IProductItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IWeaponItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/ISkinItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IWeaponProduct.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/ItemDataObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/ISkinProduct.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ScriptableObjects/IconsDataObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/MenuPanelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/GameDataManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events/GameEventManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ScriptableObjects/IconsDataObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IProduct.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/Extensions/InventoryDataExtensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/SkinsDataObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/WeaponsDataObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/PlayerData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IProduct.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/SkinProductData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/WeaponProductData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/WeaponsDataObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/SkinsDataObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/Extensions/InventoryDataExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/InventoryData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IWeaponProduct.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/ISkinProduct.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/WeaponProductData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/SkinProductData.cs" />
       </list>
     </option>
   </component>
@@ -181,7 +187,7 @@
       <workItem from="1651499259770" duration="1231000" />
       <workItem from="1651579052897" duration="9521000" />
       <workItem from="1651839423082" duration="5998000" />
-      <workItem from="1651911873303" duration="2995000" />
+      <workItem from="1651911873303" duration="4966000" />
     </task>
     <servers />
   </component>

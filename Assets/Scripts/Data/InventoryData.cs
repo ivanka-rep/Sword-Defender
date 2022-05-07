@@ -1,14 +1,37 @@
 using System.Collections.Generic;
-using Data.ShopItemsData;
-using Data.ShopItemsData.Interfaces;
+using SwordDefender.Data.ShopItemsData;
+using SwordDefender.Data.ShopItemsData.Interfaces;
+using SwordDefender.Data.Extensions;
 
-namespace Data
+namespace SwordDefender.Data
 {
     public class InventoryData
     {
-        public WeaponProductData InstalledWeapon { get; set; }
+        public InventoryData(List<IProduct> purchasedProducts)
+        {
+            PurchasedProducts = purchasedProducts;
+        }
+
+        public WeaponProductData InstalledWeapon { get; private set; }
         public SkinProductData InstalledSkin { get; set; }
         
-        public List<IProduct> PurchasedProducts { get; set; }
+        public List<IProduct> PurchasedProducts { get; }
+
+        public void AddPurchasedProduct(IProduct product)
+        {
+            PurchasedProducts.Add(product);
+        }
+        
+        public void SetWeapon(WeaponProductData weapon)
+        {
+            if (PurchasedProducts.IsProductPurchased(weapon))
+                InstalledWeapon = weapon;
+        }
+
+        public void SetSkin(SkinProductData skin)
+        {
+            if (PurchasedProducts.IsProductPurchased(skin))
+                InstalledSkin = skin;
+        }
     }
 }

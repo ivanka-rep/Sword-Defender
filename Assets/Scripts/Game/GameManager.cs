@@ -1,5 +1,5 @@
-using Data;
 using SwordDefender.Config;
+using SwordDefender.Data;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,11 +16,11 @@ namespace SwordDefender.Game
         public static GameManager Instance = null;
         public GameConfig Config => config;
         public bool IsGameActive { get; private set; } = false;
-        public PlayerData PlayerData => m_playerData;
+        public UserData UserData => m_playerData;
         #endregion
 
         #region Private
-        private PlayerData m_playerData = null;
+        private UserData m_playerData = null;
         #endregion
         
         #region Unity Methods

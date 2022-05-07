@@ -1,5 +1,5 @@
 
-namespace Data.ShopItemsData.Interfaces
+namespace SwordDefender.Data.ShopItemsData.Interfaces
 {
    public interface IWeaponProduct : IProduct
    {

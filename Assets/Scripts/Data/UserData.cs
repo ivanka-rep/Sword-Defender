@@ -1,10 +1,10 @@
 using System;
 
-namespace Data
+namespace SwordDefender.Data
 {
-    [Serializable] public class PlayerData
+    [Serializable] public class UserData
     {
-        public PlayerData(InventoryData inventoryData, uint soft, uint hard)
+        public UserData(InventoryData inventoryData, uint soft, uint hard)
         {
             InventoryData = inventoryData;
             SoftCurrency = soft;

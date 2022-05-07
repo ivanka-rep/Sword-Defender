@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Data
+namespace SwordDefender.Data
 {
     [CreateAssetMenu(fileName = "IconsData", menuName = "ScriptableObjects/IconsData", order = 1)]
     public class IconsDataObject : ScriptableObject
