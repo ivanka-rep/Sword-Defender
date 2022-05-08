@@ -9,20 +9,17 @@ namespace SwordDefender.Game
     {
         #region Serialized Fields
         [SerializeField] private GameConfig config = null;
+        [SerializeField] private GameDataManager dataManager = null;
         [SerializeField] private bool isTest = false;
         #endregion
 
         #region Public
         public static GameManager Instance = null;
         public GameConfig Config => config;
+        public GameDataManager DataManager => dataManager;
         public bool IsGameActive { get; private set; } = false;
-        public UserData UserData => m_playerData;
         #endregion
 
-        #region Private
-        private UserData m_playerData = null;
-        #endregion
-        
         #region Unity Methods
 
         private void Awake()
@@ -30,19 +27,20 @@ namespace SwordDefender.Game
             if (Instance != null) Destroy(Instance); 
             Instance = this;
             DontDestroyOnLoad(Instance);
-
+            
+            GameEventManager.OnGameProcessEnded.AddListener(() => IsGameActive = false);
+            //todo: initialize by event
+            SceneManager.LoadScene(isTest ? "TestScene" : "Main");
+            
             if (PlayerPrefs.GetInt("FIRST_START", 1) == 1)
             {
-                // m_playerData =...
+                // DataManager
                 PlayerPrefs.SetInt("FIRST_START", 0);
             }
             else
             {
-                //m_playerData =...
+                //DataManager
             }
-            
-            GameEventManager.OnGameProcessEnded.AddListener(() => IsGameActive = false);
-            SceneManager.LoadScene(isTest ? "TestScene" : "Main");
         }
         #endregion
 

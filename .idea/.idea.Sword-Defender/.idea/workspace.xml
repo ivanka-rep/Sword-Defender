@@ -22,19 +22,24 @@
     <list default="true" id="0416cd47-dd86-46cd-b1c2-b37b36df28dd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sword-Defender/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Extensions/InventoryDataExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Extensions/InventoryDataExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/InventoryData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/InventoryData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/PlayerData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PreloaderScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PreloaderScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Data.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Data/IconsData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Data/IconsData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Data/SkinsData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Data/SkinsData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Data/WeaponsData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Data/WeaponsData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Config/GameConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Config/GameConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/GameDataManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/GameDataManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ScriptableObjects/IconsDataObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ScriptableObjects/IconsDataObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IProduct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IProduct.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/ISkinProduct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/ISkinProduct.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IWeaponProduct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IWeaponProduct.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/SkinsDataObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/SkinsDataObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/WeaponsDataObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/WeaponsDataObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/SkinProductData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/SkinProductData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/WeaponProductData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/WeaponProductData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameEventManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameEventManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/SkinsDataObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/SkinsDataObject.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/WeaponsDataObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/WeaponsDataObject.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/UserDataEventManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/UserDataEventManager.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,22 +51,22 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Events/GameEventManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestScripts/TestSceneManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Config/GameConfig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/ScriptableObjects/IconsDataObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LossPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Animations/AnimationsManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Config/Classes/PlayerParams.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/Classes/PanelBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/Epic Toon FX/Demo/Scripts/ETFXButtonScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/WeaponProductData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/PanelsManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/WeaponsDataObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FX/ParticlesManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/InventoryData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/PlayerData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/DataEventManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Features/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Features/ClickScale.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Features/GameTagExtension/GameTag.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Features/ToggleSwitch.cs" root0="FORCE_HIGHLIGHTING" />
@@ -76,9 +81,9 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/ToggleGroup.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/GameDataManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IProduct.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/SkinsDataObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/WinPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/ShopPanel/Items/ShopItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Config/Extensions/ConfigExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/GameHudPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/Extensions/InventoryDataExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Audio/AudioManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -90,14 +95,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/OnClickAnim.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Animations/OnClickAnim.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Animations/ClickScale.cs" />
-        <option value="$PROJECT_DIR$/Assets/Packages/CrystalFramework/Utility/SafeArea.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameEventManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Features/ToggleSwitch.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Feautures/ClickScale.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Feautures/ToggleSwitch.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Features/ClickScale.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Features/ToggleSwitch.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CharacterControl/EnemyController.cs" />
@@ -125,20 +122,30 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/ISkinItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/ItemDataObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/MenuPanelManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/GameDataManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Events/GameEventManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ScriptableObjects/IconsDataObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IProduct.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/Extensions/InventoryDataExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/SkinsDataObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/WeaponsDataObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/PlayerData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/InventoryData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/IWeaponProduct.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/Interfaces/ISkinProduct.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/WeaponProductData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/SkinProductData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/DataEventManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Features/SerializeProperty.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Config/Classes/ShopProducts.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/SkinsConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ShopItemsData/ScriptableObjects/WeaponsConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Config/Classes/SkinsConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Config/Classes/WeaponsConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Config/Extensions/ConfigExtensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Config/GameConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ScriptableObjects/IconsDataObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/GameDataManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" />
       </list>
     </option>
   </component>
@@ -187,7 +194,8 @@
       <workItem from="1651499259770" duration="1231000" />
       <workItem from="1651579052897" duration="9521000" />
       <workItem from="1651839423082" duration="5998000" />
-      <workItem from="1651911873303" duration="4966000" />
+      <workItem from="1651911873303" duration="5820000" />
+      <workItem from="1652000172600" duration="5579000" />
     </task>
     <servers />
   </component>
@@ -216,10 +224,10 @@
       <screen x="0" y="0" width="2752" height="1112" />
     </state>
     <state x="1893" y="241" key="RiderGenerateDialog/0.0.2752.1112@0.0.2752.1112" timestamp="1651841291728" />
-    <state x="1730" y="294" width="668" height="530" key="find.popup" timestamp="1651918442973">
+    <state x="1730" y="294" width="668" height="530" key="find.popup" timestamp="1652004651557">
       <screen x="0" y="0" width="2752" height="1112" />
     </state>
-    <state x="1730" y="294" width="668" height="530" key="find.popup/0.0.2752.1112@0.0.2752.1112" timestamp="1651918442973" />
+    <state x="1730" y="294" width="668" height="530" key="find.popup/0.0.2752.1112@0.0.2752.1112" timestamp="1652004651557" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1647448311903">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

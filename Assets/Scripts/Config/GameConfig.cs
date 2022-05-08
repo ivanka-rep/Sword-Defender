@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using SwordDefender.Data.ShopItemsData;
 using UnityEngine;
 
 namespace SwordDefender.Config
@@ -8,5 +10,9 @@ namespace SwordDefender.Config
         public PlayerParams PlayerParams = null;
         public EnemyParams EnemyParams = null;
         public CombatParams CombatParams = null;
+
+        [Header("Shop products")]
+        public List<SkinsDataConfig> SkinsConfig = null;
+        public List<WeaponsDataConfig> WeaponsConfig = null;
     }
 }
