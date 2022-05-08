@@ -10,8 +10,8 @@ namespace SwordDefender.Config
     {
         public string productId;
         public string name;
-        public int price;
         public string iconId;
+        public int price;
         public string health;
         public string attackSpeed;
     }
