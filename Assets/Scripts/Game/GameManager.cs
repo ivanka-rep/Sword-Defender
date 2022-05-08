@@ -31,16 +31,8 @@ namespace SwordDefender.Game
             GameEventManager.OnGameProcessEnded.AddListener(() => IsGameActive = false);
             //todo: initialize by event
             SceneManager.LoadScene(isTest ? "TestScene" : "Main");
-            
-            if (PlayerPrefs.GetInt("FIRST_START", 1) == 1)
-            {
-                // DataManager
-                PlayerPrefs.SetInt("FIRST_START", 0);
-            }
-            else
-            {
-                //DataManager
-            }
+
+            dataManager.Init();
         }
         #endregion
 

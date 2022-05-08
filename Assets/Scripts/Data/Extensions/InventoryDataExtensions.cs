@@ -6,8 +6,8 @@ namespace SwordDefender.Data.Extensions
 {
     public static class InventoryDataExtensions
     {
-        public static bool IsProductPurchased(this IEnumerable<IProduct> purchasedProducts, IProduct product) => 
-            purchasedProducts.Any(purchased => purchased.ProductId == product.ProductId);
+        public static bool IsProductPurchased(this IEnumerable<IProduct> purchasedProducts, string productId) => 
+            purchasedProducts.Any(purchased => purchased.ProductId == productId);
         
     }
 }

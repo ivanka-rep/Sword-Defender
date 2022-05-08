@@ -1,11 +1,13 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using SwordDefender.Data.ShopItemsData;
 using SwordDefender.Data.ShopItemsData.Interfaces;
 using SwordDefender.Data.Extensions;
 
 namespace SwordDefender.Data
 {
-    public class InventoryData
+    [Serializable] public class InventoryData
     {
         public InventoryData(List<IProduct> purchasedProducts)
         {
@@ -13,7 +15,7 @@ namespace SwordDefender.Data
         }
 
         public WeaponProductData InstalledWeapon { get; private set; }
-        public SkinProductData InstalledSkin { get; set; }
+        public SkinProductData InstalledSkin { get; private set; }
         
         public List<IProduct> PurchasedProducts { get; }
 
@@ -22,16 +24,18 @@ namespace SwordDefender.Data
             PurchasedProducts.Add(product);
         }
         
-        public void SetWeapon(WeaponProductData weapon)
+        public void SetWeapon(string weaponId)
         {
-            if (PurchasedProducts.IsProductPurchased(weapon))
-                InstalledWeapon = weapon;
+            if (PurchasedProducts.IsProductPurchased(weaponId))
+                InstalledWeapon = (WeaponProductData)PurchasedProducts
+                    .Find(product => product.ProductId == weaponId);
         }
 
-        public void SetSkin(SkinProductData skin)
+        public void SetSkin(string skinId)
         {
-            if (PurchasedProducts.IsProductPurchased(skin))
-                InstalledSkin = skin;
+            if (PurchasedProducts.IsProductPurchased(skinId))
+                InstalledSkin = (SkinProductData)PurchasedProducts
+                    .Find(product => product.ProductId == skinId);
         }
     }
 }

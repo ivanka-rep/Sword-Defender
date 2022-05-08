@@ -506,7 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bfa1264221e931439c0235d36d6ab1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_iconsData: {fileID: 0}
+  iconsDataScriptable: {fileID: 11400000, guid: 96410400cf2e81744a08cde996ef5f0d, type: 2}
 --- !u!1 &2131760137
 GameObject:
   m_ObjectHideFlags: 0

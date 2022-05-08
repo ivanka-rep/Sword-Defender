@@ -12,14 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb84e6bfd7e64c34a843fb7219efb58b, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
-  PlayerParams:
+  playerParams:
     damage: 100
     speed: 20
-  EnemyParams:
+  enemyParams:
     damage: 10
     speed: 20
     distanceToPlayerOffset: 4
     enemiesAmount: 5
-  CombatParams:
+  combatParams:
     boxCastMaxDistance: 10
     checkBoxHalfSize: {x: 3, y: 0.25, z: 2}
+  skinsConfig:
+  - productId: stickman_default
+    name: stickman
+    iconId: stickman_white_icon
+    price: 100
+    health: 100
+    attackSpeed: 100
+  weaponsConfig:
+  - productId: sword_default
+    name: sword
+    iconId: sword_icon
+    price: 100
+    damage: 100
+    weight: 100
