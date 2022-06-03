@@ -1,3 +1,4 @@
+using SwordDefender.Game;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,10 @@ namespace SwordDefender.UI.Panels
         #region Serialized Fields
         [Header("Settings")]
         [SerializeField] private float transitionTime = 1f;
+
+        [SerializeField] private Color winBackground = Color.green;
+        [SerializeField] private Color looseBackground = Color.red;
+
         
         [Header("Panels")]
         [SerializeField] private Image background = null;
@@ -28,36 +33,44 @@ namespace SwordDefender.UI.Panels
         {
             if (Instance != null) Destroy(Instance); 
             Instance = this;
+            
+            GameEventManager.OnGameProcessStarted.AddListener(() => background.color = Color.clear);
         }
         #endregion
 
         #region Public Methods
 
         public void ActivateMenuPanel(PanelBase currentPanel) => 
-            ChangeActivePanel(currentPanel, menuPanel, true);
+            ChangeActivePanel(currentPanel, menuPanel);
 
         public void ActivateSettingsPanel(PanelBase currentPanel) =>
-            ChangeActivePanel(currentPanel, settingsPanel, true);
+            ChangeActivePanel(currentPanel, settingsPanel);
         
         public void ActivateShopPanel(PanelBase currentPanel) =>
-            ChangeActivePanel(currentPanel, shopPanel, true);
+            ChangeActivePanel(currentPanel, shopPanel);
 
         public void ActivateGameHudPanel(PanelBase currentPanel) => 
             ChangeActivePanel(currentPanel, gameHudPanel);
         
-        public void ActivateWinPanel(PanelBase currentPanel) => 
-            ChangeActivePanel(currentPanel, winPanel);
-        
-        public void ActivateLoosePanel(PanelBase currentPanel) => 
-            ChangeActivePanel(currentPanel, lossPanel);
+        public void ActivateWinPanel(PanelBase currentPanel)
+        {
+            background.color = winBackground;
+            ChangeActivePanel(currentPanel, winPanel, false);
+        }
+
+        public void ActivateLoosePanel(PanelBase currentPanel)
+        {
+            background.color = looseBackground;
+            ChangeActivePanel(currentPanel, lossPanel, false);
+        }
 
         #endregion
 
         #region Private Methods
 
-        private void ChangeActivePanel(PanelBase currentPanel, PanelBase targetPanel, bool enableBackground = false)
+        private void ChangeActivePanel(PanelBase currentPanel, PanelBase targetPanel, bool changeBackground = true)
         {
-            background.color = enableBackground ? Color.white : Color.clear;
+            if (changeBackground) background.color = Color.white;
             
             currentPanel.SetActive(false, transitionTime);
             targetPanel.SetActive(true, transitionTime);

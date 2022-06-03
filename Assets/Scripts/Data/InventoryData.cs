@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using SwordDefender.Data.ShopItemsData;
 using SwordDefender.Data.ShopItemsData.Interfaces;
 using SwordDefender.Data.Extensions;
@@ -22,6 +21,7 @@ namespace SwordDefender.Data
         public void AddPurchasedProduct(IProduct product)
         {
             PurchasedProducts.Add(product);
+            DataEventManager.SendInventoryDataChanged(this);
         }
         
         public void SetWeapon(string weaponId)
@@ -29,6 +29,8 @@ namespace SwordDefender.Data
             if (PurchasedProducts.IsProductPurchased(weaponId))
                 InstalledWeapon = (WeaponProductData)PurchasedProducts
                     .Find(product => product.ProductId == weaponId);
+            
+            DataEventManager.SendInventoryDataChanged(this);
         }
 
         public void SetSkin(string skinId)
@@ -36,6 +38,8 @@ namespace SwordDefender.Data
             if (PurchasedProducts.IsProductPurchased(skinId))
                 InstalledSkin = (SkinProductData)PurchasedProducts
                     .Find(product => product.ProductId == skinId);
+            
+            DataEventManager.SendInventoryDataChanged(this);
         }
     }
 }

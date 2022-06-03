@@ -37,22 +37,28 @@ namespace SwordDefender.Data
 
         #region Public Methods
 
-        public void Init()
+        public void Init(Action onInitializationEnded)
         {
             m_gameManager = GameManager.Instance;
             m_iconsData = iconsDataScriptable.GetAllIcons();
             m_dataPath = Application.persistentDataPath;
+            m_gameData = new DataWrapper();
             
-            if (PlayerPrefs.GetInt("FIRST_START", 1) == 1)
-            {
-                FirstStartInitialization();
-                PlayerPrefs.SetInt("FIRST_START", 0);
-            }
-            else
-            {
-                DeserializeData();
-            }
+            // if (PlayerPrefs.GetInt("FIRST_START", 1) == 1)
+            // {
+            //     FirstStartInitialization();
+            //     PlayerPrefs.SetInt("FIRST_START", 0);
+            // }
+            // else
+            // {
+            //     DeserializeData();
+            // }
 
+            //todo try to invoke this OnApplicationQuit
+            // DataEventManager.OnUserDataChanged.AddListener(userData => SerializeData());
+            // DataEventManager.OnInventoryDataChanged.AddListener(inventoryData => SerializeData());
+            
+            onInitializationEnded.Invoke();
         }
 
         #endregion
@@ -61,7 +67,7 @@ namespace SwordDefender.Data
 
         private void FirstStartInitialization()
         {
-            m_userData = new UserData(0, 0);
+            m_userData = new UserData(10, 10);
 
             var purchasedProducts = new List<IProduct>
             {
@@ -71,23 +77,40 @@ namespace SwordDefender.Data
             m_inventoryData = new InventoryData(purchasedProducts);
             m_inventoryData.SetSkin("stickman_default");
             m_inventoryData.SetWeapon("sword_default");
+            
+            SerializeData();
         }
 
         private void DeserializeData()
         {
             m_gameData = DataSerializer.GetSerializedData<DataWrapper>(m_dataPath + "/gameData.json");
-            
-            m_userData = m_gameData.UserData;
-            m_inventoryData = m_gameData.InventoryData;
+            ReadGameData();
         }
 
         private void SerializeData()
         {
-            m_gameData.UserData = m_userData;
-            m_gameData.InventoryData = m_inventoryData;
-            
+            SetGameData();
             DataSerializer.SerializeData(m_gameData, m_dataPath + "/gameData.json");
         }
+
+        private void SetGameData()
+        {
+            m_gameData.UserData = m_userData;
+            m_gameData.InventoryData = m_inventoryData;
+        }
+
+        private void ReadGameData()
+        {
+            m_userData = m_gameData.UserData;
+            m_inventoryData = m_gameData.InventoryData;
+        }
+        #endregion
+
+        #region Unity Methods
+
+        private void OnApplicationQuit() =>
+            SerializeData();
+
         #endregion
     }
 

@@ -29,10 +29,8 @@ namespace SwordDefender.Game
             DontDestroyOnLoad(Instance);
             
             GameEventManager.OnGameProcessEnded.AddListener(() => IsGameActive = false);
-            //todo: initialize by event
-            SceneManager.LoadScene(isTest ? "TestScene" : "Main");
 
-            dataManager.Init();
+            dataManager.Init(() => SceneManager.LoadScene(isTest ? "TestScene" : "Main"));
         }
         #endregion
 

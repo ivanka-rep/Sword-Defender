@@ -120,12 +120,15 @@
           </e>
           <e p="Features" t="Include">
             <e p="CameraController.cs" t="Include" />
-            <e p="DataSerializer.cs" t="Include" />
             <e p="GameTagExtension" t="Include">
               <e p="GameTag.cs" t="Include" />
               <e p="GameTagReference.cs" t="Include" />
             </e>
             <e p="ObjectPool.cs" t="Include" />
+            <e p="Serialization" t="Include">
+              <e p="DataSerializer.cs" t="Include" />
+              <e p="GenericJsonConverter.cs" t="Include" />
+            </e>
           </e>
           <e p="FX" t="Include">
             <e p="ParticlesManager.cs" t="Include" />
