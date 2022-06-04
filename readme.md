@@ -1,6 +1,6 @@
 ﻿# Sword Defender (demo)
 Hello! This is source code of Hyper-Casual game - *SwordDefender*.  
-If you want to download it, you can get it through the **[link](google.com)**  
+If you want to download the game, you can get it through the **[link](https://drive.google.com/file/d/1qmYbhMVOufPg3-HyjIKxYyJYMsintiLw/view?usp=sharing)**  
 
 Also you can watch the little trailer:  
 
